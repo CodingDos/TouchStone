@@ -36,3 +36,49 @@ class BrailleDetail(generics.RetrieveAPIView):
         return obj
 
 
+class WordsList(generics.ListAPIView):
+    queryset = Words.objects.all()
+    serializer_class = WordSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['word']
+
+
+class WordDetail(generics.RetrieveAPIView):
+    serializer_class = WordSerializer
+
+    def get_queryset(self):
+        word = self.kwargs['word']
+        return Words.objects.filter(word=word)
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        obj = generics.get_object_or_404(queryset)
+        self.check_object_permissions(self.request, obj)
+        return obj
+
+
+class PhrasesList(generics.ListAPIView):
+    queryset = Phrases.objects.all()
+    serializer_class = PhraseSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['phrase']
+
+
+class PhraseDetail(generics.RetrieveAPIView):
+    serializer_class = PhraseSerializer
+
+    def get_queryset(self):
+        phrase = self.kwargs['phrase']
+        return Words.objects.filter(phrase=phrase)
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        obj = generics.get_object_or_404(queryset)
+        self.check_object_permissions(self.request, obj)
+        return obj
+
+
+class PhraseIdDetail(generics.RetrieveAPIView):
+    serializer_class = PhraseSerializer
+    queryset = Phrases.objects.all()
+    lookup_field = 'id'
