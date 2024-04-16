@@ -2,13 +2,23 @@ from django.db import models
 
 # Create your models here.
 
+TYPE = (
+        ('abc', 'Alphabet'),
+        ('123', 'Numbers'),
+        ('!?.', 'Special Characters'),
+        ('the', 'Combo Characters')
+        )
+
 class Braille(models.Model):
     binary = models.IntegerField()
     english = models.CharField()
-    braille = models.CharField(max_length=1)
+    braille_img = models.CharField(null=True, blank=True)
+    learning_img = models.CharField(null=True, blank=True)
+    category = models.CharField(max_length=3, choices=TYPE, null=True, blank=True)
+
 
     def __str__(self):
-        return f'{self.english} - {str(self.binary)} - {self.braille}'
+        return f'{self.english} - {str(self.binary)}'
 
 class Words(models.Model):
     word = models.CharField()

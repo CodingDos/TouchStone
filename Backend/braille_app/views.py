@@ -15,8 +15,8 @@ class BrailleList(generics.ListAPIView):
     queryset = Braille.objects.all()
     serializer_class = BrailleSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['english', 'braille', 'binary']
-    ordering_fields = ['english', 'binary']
+    search_fields = ['english', 'binary', 'category']
+    ordering_fields = ['english', 'binary', 'category']
 
 
 class BrailleDetail(generics.RetrieveAPIView):
