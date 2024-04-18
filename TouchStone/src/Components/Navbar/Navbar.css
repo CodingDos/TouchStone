@@ -6,7 +6,8 @@
   justify-content: left;
   align-items: center;
   background-color: #808c6c;
-  position:relative;
+  position:fixed;
+  top: 0
 }
 
 .navbar-title{

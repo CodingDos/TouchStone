@@ -12,15 +12,15 @@ function DirectoryCard() {
       <div className="dircard-examples">
         <div className="dircard-example1">
           <h3>Aa</h3>
-          <img className="dircard-braille-img" src="src/assets/BrailleA.png" />
+          <img className="dircard-braille-img" src="src/assets/braille/braille_a_100000.png" />
         </div>
         <div className="dircard-example2">
           <h3>Bb</h3>
-          <img className="dircard-braille-img" src="src/assets/BrailleB.png" />
+          <img className="dircard-braille-img" src="src/assets/braille/braille_b_110000.png" />
         </div>
         <div className="dircard-example3">
           <h3>Cc</h3>
-          <img className="dircard-braille-img" src="src/assets/BrailleC.png" />
+          <img className="dircard-braille-img" src="src/assets/braille/braille_c_100100.png" />
         </div>
       </div>
       <h4>Alphabet</h4>

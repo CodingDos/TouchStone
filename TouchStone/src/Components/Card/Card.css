@@ -11,6 +11,10 @@
     gap: 5px
 }
 
+.card:hover{
+    border: 2px solid #808c6c; 
+}
+
 .card-ref-img{
     width: 40%;
 }

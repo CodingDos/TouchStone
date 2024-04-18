@@ -8,6 +8,10 @@
     background-color: white;
 }
 
+.dircard:hover{
+    border: 2px solid #808c6c;
+}
+
 .dircard-examples{
     display: flex;
     justify-content: space-around;
@@ -16,3 +20,4 @@
 .dircard-braille-img{
     height: 4rem;
 }
+

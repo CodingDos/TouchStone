@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import FooterSearch from "../../Components/FooterSearch/FooterSearch.jsx";
 import DirectoryCard from "../../Components/DirectoryCard/DirectoryCard.jsx";
 import Navbar from "../../Components/Navbar/Navbar.jsx";
 
@@ -18,6 +19,7 @@ function MainDir() {
       <DirectoryCard />
       <DirectoryCard />
       <DirectoryCard />
+      <FooterSearch/>
     </div>
   );
 }
