@@ -49,4 +49,6 @@ INSERT INTO braille_app_braille ("binary", english, braille_img, category, learn
 	(100011, 'WH', '', 'the', ''),
 	(010001, 'EN', '', 'the', ''),
 	(110101, 'ED', '', 'the', ''),
-	(100101, 'SH', '', 'the', '');
+	(100101, 'SH', '', 'the', ''),
+	(100001, 'CH', '', 'the', '');
+
