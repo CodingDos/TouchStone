@@ -10,7 +10,7 @@ TYPE = (
         )
 
 class Braille(models.Model):
-    binary = models.IntegerField()
+    binary = models.CharField()
     english = models.CharField()
     braille_img = models.CharField(null=True, blank=True)
     learning_img = models.CharField(null=True, blank=True)
