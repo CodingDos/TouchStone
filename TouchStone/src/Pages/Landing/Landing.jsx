@@ -8,12 +8,12 @@ function Landing() {
 
   return (
     <div className='landing'>
-      <img className="landing-img" src='src/assets/TSBeige.png'/>
+      <img className="landing-img" src='src/assets/logos/touchstone-logo.png'/>
       <h1>Touchstone</h1>
       <div className='landing-buttons'>
-      <button onClick={() => navigate("/home")}>Enter</button>
-      <button onClick={() => navigate("/devteam")}>About Us</button>
-      <button onClick={() => navigate("/appinfo")}>Walk Through</button>
+      <button className='landing-button-style' onClick={() => navigate("/home")}>Enter</button>
+      <button className='landing-button-style'onClick={() => navigate("/devteam")}>About Us</button>
+      <button className='landing-button-style'onClick={() => navigate("/appinfo")}>Walk Through</button>
       </div>
     </div>
   )

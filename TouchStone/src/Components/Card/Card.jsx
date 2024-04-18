@@ -16,8 +16,8 @@ function Card({height, width}) {
     }}
     >
       <h3 className='card-title'>Aa</h3>
-      <img className="card-ref-img" src="src/assets/AApple.png" />
-      <img className="card-braille-img" src="src/assets/BrailleA.png" /> 
+      <img className="card-ref-img" src="src/assets/refs/A.png" />
+      <img className="card-braille-img" src="src/assets/braille/braille_a_100000.png" /> 
     </div>
   )
 }
