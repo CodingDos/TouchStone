@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Home, BrailleList, BrailleDetail, WordsList, WordDetail, PhrasesList, PhraseDetail, PhraseIdDetail
+from .views import Home, BrailleList, BrailleDetail, WordsList, WordDetail, PhrasesList, PhraseDetail, PhraseIdDetail, GeminiAPIView
 
 urlpatterns = [
         path('', Home.as_view(), name='home'),
@@ -11,4 +11,5 @@ urlpatterns = [
         path('phrases/<str:phrase>/', PhraseDetail.as_view(), name='phrase-detail'),
         #^the one aboe isn't working well rn
         path('phrases/id/<int:id>/', PhraseIdDetail.as_view(), name='phrase-detail-id'),
+        path('api/gemini/', GeminiAPIView.as_view(), name='gemini-api'),
         ]
