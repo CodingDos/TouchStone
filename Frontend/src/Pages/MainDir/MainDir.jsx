@@ -20,9 +20,21 @@ function MainDir() {
         example3="Cc"
         title="Alphabet"/>
       </div>
-      <DirectoryCard />
-      <DirectoryCard />
-      <DirectoryCard />
+      <DirectoryCard 
+        example1="1" 
+        example2="2"
+        example3="3"
+        title="Numbers" />
+      <DirectoryCard  
+        example1="Space" 
+        example2="!"
+        example3="Letter"
+        title="Punctuation & Indicators"/>
+      <DirectoryCard  
+        example1="Aa" 
+        example2="Bb"
+        example3="Cc"
+        title="Alphabet"/>
       <FooterSearch/>
     </div>
   );
