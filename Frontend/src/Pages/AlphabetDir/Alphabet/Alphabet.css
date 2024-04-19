@@ -1,0 +1,25 @@
+.alphabet{
+    height: 100vh;
+}
+
+.alphabet-carosel{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding-top: 100px;
+}
+
+.carosel{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:auto;
+    white-space: nowrap;
+    gap: 3rem;
+    padding-left: 0;
+}
+
+.alphacard{
+    display: inline-block
+}
