@@ -1,3 +1,5 @@
+/* searchbar css */
+
 .footer{
     width:100vw;
     display: flex;
@@ -38,4 +40,10 @@
     font-weight: 600;
     text-align: left;
     padding-left: 15px;
+}
+
+/* modal css */
+
+.search-result-modal{
+    
 }
