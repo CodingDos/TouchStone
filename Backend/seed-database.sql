@@ -2,6 +2,10 @@
 
 DELETE FROM braille_app_braille;
 
+DELETE FROM braille_app_words;
+
+DELETE FROM braille_app_phrases;
+
 INSERT INTO braille_app_braille ("binary", english, braille_img, category, learning_img)
 	VALUES 
 	('100000', 'A', 'https://i.imgur.com/hSXLUH1.png', 'abc', 'https://i.imgur.com/v1kARdV.png'),
