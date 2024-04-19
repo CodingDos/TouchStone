@@ -29,12 +29,12 @@ function MainDir() {
         example1="Space" 
         example2="!"
         example3="Letter"
-        title="Punctuation & Indicators"/>
+        title="Special Characters"/>
       <DirectoryCard  
-        example1="Aa" 
-        example2="Bb"
-        example3="Cc"
-        title="Alphabet"/>
+        example1="FOR" 
+        example2="THE"
+        example3="ST"
+        title="Combos"/>
       <FooterSearch/>
     </div>
   );
