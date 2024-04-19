@@ -1,0 +1,27 @@
+.alphabetdir{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    padding-top: 100px;
+    padding-bottom: 55px;
+}
+
+.alphabet-btns{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.alphabet-btns-back, .alphabet-btns-forward{
+    border: 2px solid transparent;
+}
+
+.alphabet-btns-back:hover, .alphabet-btns-forward:hover{
+    border: 2px solid black;
+}
+
+.fa-angle-left, .fa-angle-right{
+    font-size: 30px;
+}
