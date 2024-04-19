@@ -44,7 +44,7 @@ function FooterSearch() {
       >
         <div className="search-result">
           <div>
-          <button onClick={closeModal}><i class="fa fa-remove"></i></button>
+          <button className='modal-close-btn' onClick={closeModal}><i class="fa fa-remove"></i></button>
             <p className="answer">{search} in Braille is: {answer}</p>
           </div>
         </div>

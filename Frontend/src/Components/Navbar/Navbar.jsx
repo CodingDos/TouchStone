@@ -14,6 +14,7 @@ function Navbar() {
           <Link className="burgermenu-link">Numbers</Link>
           <Link className="burgermenu-link">Combos</Link>
           <Link className="burgermenu-link">Special Characters</Link>
+          <Link className="burgermenu-link">Phrases</Link>
           <Link className="burgermenu-link">Quizes</Link>
           <Link to='/devteam' className="burgermenu-link">About Us</Link>
         </Menu>

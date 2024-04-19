@@ -14,11 +14,12 @@ function MainDir() {
     <div className="maindir">
       <Navbar />
       <div onClick={() => navigate("/alphabetdir")}>
-        <DirectoryCard 
-        example1="Aa" 
-        example2="Bb"
-        example3="Cc"
-        title="Alphabet"/>
+        <DirectoryCard
+          example1="Aa"
+          example2="Bb"
+          example3="Cc"
+          title="Alphabet"
+        />
       </div>
       <DirectoryCard 
         example1="1" 
