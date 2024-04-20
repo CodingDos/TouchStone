@@ -34,9 +34,9 @@ function App() {
         <Route path="/numberdir" element={<NumberDir/>}/>
         <Route path="/number/:id" element={<Number/>}/>
         <Route path="/combodir" element={<ComboDir/>}/>
-        <Route path="/combo" element={<Combo/>}/>
+        <Route path="/combo/:id" element={<Combo/>}/>
         <Route path="/specialchardir" element={<SpecialCharDir/>}/>
-        <Route path="/specialchar" element={<SpecialChar/>}/>
+        <Route path="/specialchar/:id" element={<SpecialChar/>}/>
 
         {/* test routes */}
         <Route path="/dircard" element={<DirectoryCard/>}/>
