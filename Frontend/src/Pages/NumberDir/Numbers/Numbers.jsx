@@ -1,10 +1,83 @@
-import React from 'react'
-import "./Numbers.css"
+import Navbar from "../../../Components/Navbar/Navbar.jsx";
+import Card from "../../../Components/Card/Card.jsx";
+import {
+  getAlphabet,
+  getCharacter,
+  getNumbers,
+} from "../../../Services/characters.js";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import FooterSearch from "../../../Components/FooterSearch/FooterSearch.jsx";
+import "./Numbers.css";
 
 function Numbers() {
+  const [cards, setCards] = useState([]);
+  const [card, setCard] = useState([]);
+  const { id: cardId } = useParams();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getCard = async () => {
+      const test = await getCharacter(cardId);
+      setCard(test);
+    };
+    getCard();
+  }, [cardId]);
+
+  useEffect(() => {
+    const getCards = async () => {
+      const test = await getNumbers();
+      setCards(test);
+    };
+    getCards();
+  }, []);
+
+  const onClickBack = async () => {
+    const currentidx = cards.findIndex((item) => item.english === cardId);
+    const previousidx = currentidx - 1;
+    if (previousidx === -1) {
+      navigate(`/number/${cards[cards.length - 1].english}`);
+    } else {
+      navigate(`/number/${cards[previousidx].english}`);
+    }
+  };
+
+  const onClickForward = async () => {
+    const currentidx = cards.findIndex((item) => item.english === cardId);
+    const nextidx = currentidx + 1;
+    if (nextidx === 10) {
+      navigate(`/number/${cards[0].english}`);
+    } else {
+      navigate(`/number/${cards[nextidx].english}`);
+    }
+  };
+
   return (
-    <div>Numbers</div>
-  )
+    <div className="number">
+      <Navbar />
+      <div className="number-carosel">
+        <div className="carosel">
+          <Card
+            className="numcard"
+            width={"80%"}
+            height={"auto"}
+            title={card.english}
+            brailleimg={card.braille_img}
+          />
+        </div>
+        <div className="number-btns">
+          <button onClick={onClickBack} className="number-btns-back">
+            <i class="fa fa-angle-left"></i>
+          </button>
+          <button onClick={onClickForward} className="number-btns-forward">
+            <i class="fa fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+      <FooterSearch/>
+    </div>
+  );
 }
 
-export default Numbers
+export default Numbers;

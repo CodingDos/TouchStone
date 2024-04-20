@@ -28,20 +28,4 @@
     gap: 1.5rem;
 }
 
-.alphabet-btns{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.alphabet-btns-back, .alphabet-btns-forward{
-    border: 2px solid transparent;
-}
-
-.alphabet-btns-back:hover, .alphabet-btns-forward:hover{
-    border: 2px solid black;
-}
-
-.fa-angle-left, .fa-angle-right{
-    font-size: 30px;
-}
 

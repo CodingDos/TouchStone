@@ -5,7 +5,7 @@
 .alphabet-carosel {
   display: flex;
   flex-direction: column;
-  height: 90%;
+  height: 95%;
   padding-top: 100px;
 }
 
@@ -22,4 +22,21 @@
 
 .alphacard {
   display: inline-block;
+}
+
+.alphabet-btns{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.alphabet-btns-back, .alphabet-btns-forward{
+    border: 2px solid transparent;
+}
+
+.alphabet-btns-back:hover, .alphabet-btns-forward:hover{
+    border: 2px solid black;
+}
+
+.fa-angle-left, .fa-angle-right{
+    font-size: 30px;
 }
