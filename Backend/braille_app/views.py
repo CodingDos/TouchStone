@@ -10,7 +10,12 @@ from .serializers import BrailleSerializer, WordSerializer, PhraseSerializer
 from .models import Braille, Words, Phrases
 from rest_framework import generics, filters, permissions
 from django.db.models import Q
+# this is for api key function
+from dotenv import load_dotenv
+load_dotenv()
 
+
+import os
 class Home(APIView):
     def get(self, request):
         content = {'message': 'Welcome to the TouchStone api home route!'}
@@ -89,7 +94,8 @@ class PhraseIdDetail(generics.RetrieveAPIView):
     queryset = Phrases.objects.all()
     lookup_field = 'id'
 
-genai.configure(api_key='AIzaSyCjhhJeQrHy-TrRJnQCAV2QXfgBOVSG_v8')
+apiKey = os.getenv('API_KEY')
+genai.configure(api_key=apiKey)
 
 class GeminiAPIView(APIView):
     def post(self, request, *args, **kwargs):
