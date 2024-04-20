@@ -1,14 +1,17 @@
 import Navbar from "../../../Components/Navbar/Navbar.jsx";
 import Card from "../../../Components/Card/Card.jsx";
-import { getCharacter } from "../../../Services/characters.js";
+import { getCharacter, getAlphabet } from "../../../Services/characters.js";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./Alphabet.css";
 import FooterSearch from "../../../Components/FooterSearch/FooterSearch.jsx";
 
 function Alphabet() {
+  const [cards, setCards] = useState([])
   const [card, setCard] = useState([]);
   const {id: cardId} = useParams()
+
+  const navigate = useNavigate()
   
   useEffect(() => {
     const getCard = async () => {
@@ -16,9 +19,33 @@ function Alphabet() {
       setCard(test);
     };
     getCard();
+  }, [cardId]);
+
+  useEffect(() => {
+    const getCards = async () => {
+      const test = await getAlphabet();
+      setCards(test);
+    };
+    getCards();
   }, []);
 
+  const onClickBack = async() => {
+    const currentidx = cards.findIndex(item => item.english ===cardId)
+    const previousidx = currentidx - 1
+    if(previousidx === -1 ){
+      navigate(`/alphabet/${cards[cards.length-1].english}`)
+    }else{
+    navigate(`/alphabet/${cards[previousidx].english}`)
+  }}
 
+  const onClickForward = async() => {
+    const currentidx = cards.findIndex(item => item.english ===cardId)
+    const nextidx = currentidx + 1
+    if(nextidx === 26 ){
+      navigate(`/alphabet/${cards[0].english}`)
+    }else{
+    navigate(`/alphabet/${cards[nextidx].english}`)
+  }}
 
   return (
     <div className="alphabet">
@@ -34,8 +61,8 @@ function Alphabet() {
         />
         </div>
         <div className="alphabet-btns">
-          <button className="alphabet-btns-back"><i class='fa fa-angle-left' ></i></button>
-          <button className="alphabet-btns-forward"><i class='fa fa-angle-right'></i></button>
+          <button onClick={onClickBack} className="alphabet-btns-back"><i class='fa fa-angle-left' ></i></button>
+          <button onClick={onClickForward} className="alphabet-btns-forward"><i class='fa fa-angle-right'></i></button>
         </div>
       </div>
       <FooterSearch/>
