@@ -29,7 +29,7 @@ function App() {
         <Route path="/home" element={<MainDir />}/>
         <Route path="/appinfo" element={<AppInfo/>}/>
         <Route path="/devteam" element={<DevTeam/>}/>
-        <Route path="/alphabet" element={<Alphabet/>}/>
+        <Route path="/alphabet/:id" element={<Alphabet/>}/>
         <Route path="/alphabetdir" element={<AlphabetDir/>}/>
         <Route path="/numberdir" element={<NumberDir/>}/>
         <Route path="/number" element={<Number/>}/>
