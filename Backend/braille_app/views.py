@@ -21,8 +21,8 @@ class BrailleList(generics.ListAPIView):
     queryset = Braille.objects.all()
     serializer_class = BrailleSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['english', 'binary', 'category']
-    ordering_fields = ['english', 'binary', 'category']
+    search_fields = ['english', 'category']
+    ordering_fields = ['english', 'category']
 
 
 class BrailleDetail(generics.RetrieveAPIView):
@@ -33,7 +33,7 @@ class BrailleDetail(generics.RetrieveAPIView):
         binaryinfo = 0
         if info.isdigit() :
             binaryinfo = int(info)
-        return Braille.objects.filter(Q(english=info) | Q(braille=info) | Q(binary=binaryinfo))
+        return Braille.objects.filter(Q(english=info) | Q(binary=binaryinfo))
 
     def get_object(self):
         queryset = self.get_queryset()
@@ -75,7 +75,7 @@ class PhraseDetail(generics.RetrieveAPIView):
 
     def get_queryset(self):
         phrase = self.kwargs['phrase']
-        return Words.objects.filter(phrase=phrase)
+        return Phrases.objects.filter(phrase=phrase)
 
     def get_object(self):
         queryset = self.get_queryset()

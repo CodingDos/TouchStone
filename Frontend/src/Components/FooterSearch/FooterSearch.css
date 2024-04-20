@@ -1,0 +1,79 @@
+/* searchbar css */
+
+.footer{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    position:fixed;
+    bottom:0
+}
+.footer-searchbar{
+    background-color: rgba(82, 81, 81, 0.4);
+    border: 1px solid grey;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px auto;
+    width: 50vw;
+}
+
+.footer-searchbar:hover{
+    border: 1px solid #373a47;
+}
+
+.footer-searchbar-btn{
+    border: none;
+    background-color: transparent;
+    color: #373a47;
+}
+
+.footer-searchbar input{
+    width: 100%;
+    border-radius: 2vh;
+    height:3vh;
+    background-color: transparent;
+    border:none;
+    color: #373a47;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 15px;
+}
+
+/* modal css */
+
+.ReactModal__Overlay{
+    height:80%;
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    background-color: #C7CFBB;
+}
+
+.search-result-modal{
+    display: flex;
+    background-color: #C7CFBB;
+    height: 100%;
+    width: 100%;
+    border: solid 2px #373a47;
+}
+
+
+
+.modal-close-btn{
+    background-color: #373a47;
+    color: #E8E7DD;
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer{
+    justify-self: center;
+    align-self: center;
+}

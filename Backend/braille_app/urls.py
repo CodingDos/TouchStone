@@ -9,7 +9,6 @@ urlpatterns = [
         path('words/<str:word>/', WordDetail.as_view(), name='word-detail'),
         path('phrases/', PhrasesList.as_view(), name='phrase-list'),
         path('phrases/<str:phrase>/', PhraseDetail.as_view(), name='phrase-detail'),
-        #^the one aboe isn't working well rn
         path('phrases/id/<int:id>/', PhraseIdDetail.as_view(), name='phrase-detail-id'),
         path('api/gemini/', GeminiAPIView.as_view(), name='gemini-api'),
         ]
