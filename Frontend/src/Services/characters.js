@@ -22,7 +22,7 @@ export const getCharacter = async (info) => {
 
 export const getAlphabet = async () => {
 	try {
-		const resp = await api.get("/braille/?search=abc/");
+		const resp = await api.get("/braille/?search=abc");
 		return resp.data;
 	} catch (error) {
 		throw error;
@@ -31,7 +31,7 @@ export const getAlphabet = async () => {
 
 export const getNumbers = async () => {
 	try {
-		const resp = await api.get("/braille/?search=123/");
+		const resp = await api.get("/braille/?search=123");
 		return resp.data;
 	} catch (error) {
 		throw error;
@@ -40,7 +40,7 @@ export const getNumbers = async () => {
 
 export const getPunctuation = async () => {
 	try {
-		const resp = await api.get("/braille/?search=!?./");
+		const resp = await api.get("/braille/?search=!?.");
 		return resp.data;
 	} catch (error) {
 		throw error;
@@ -49,7 +49,7 @@ export const getPunctuation = async () => {
 
 export const getCombos = async () => {
 	try {
-		const resp = await api.get("/braille/?search=the/");
+		const resp = await api.get("/braille/?search=the");
 		return resp.data;
 	} catch (error) {
 		throw error;
