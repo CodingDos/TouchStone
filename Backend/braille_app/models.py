@@ -9,6 +9,12 @@ TYPE = (
         ('the', 'Combo Characters')
         )
 
+TYPEB = (
+        ('Sgn', 'Signs'),
+        ('Dir', 'Directions'),
+        ('Tim', 'Time')
+        )
+
 class Braille(models.Model):
     binary = models.CharField()
     english = models.CharField()
@@ -30,6 +36,8 @@ class Words(models.Model):
 
 class Phrases(models.Model):
     phrase = models.CharField()
+    category = models.CharField(max_length=3, choices=TYPEB, null=True, blank=True)
+    img = models.CharField(null=True, blank=True)
     #img? = models.CharField()
 
     def __str__(self):
