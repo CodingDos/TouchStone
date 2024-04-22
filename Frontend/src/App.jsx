@@ -18,9 +18,11 @@ import DirectoryCard from "./Components/DirectoryCard/DirectoryCard.jsx"
 import Navbar from "./Components/Navbar/Navbar.jsx"
 import Card from "./Components/Card/Card.jsx"
 import FooterSearch from "./Components/FooterSearch/FooterSearch.jsx"
-
-import './App.css'
 import DirectoryCardPhrase from "./Components/DirectoryCard/DirectoryCardPhrase.jsx"
+import DirectoryCardQuiz from "./Components/DirectoryCard/DirectoryCardQuiz.jsx"
+import QuizDir from "./Pages/QuizDir/QuizDir.jsx"
+import './App.css'
+
 
 
 function App() {
@@ -40,6 +42,7 @@ function App() {
         <Route path="/specialchardir" element={<SpecialCharDir/>}/>
         <Route path="/specialchar/:id" element={<SpecialChar/>}/>
         <Route path="/phrases" element={<PhrasesTopicDirectory/>}/>
+        <Route path="/quiz" element={<QuizDir/>}/>
 
         {/* component routes */}
         <Route path="/dircard" element={<DirectoryCard/>}/>
@@ -47,6 +50,7 @@ function App() {
         <Route path="/card" element={<Card/>}/>
         <Route path="/search" element={<FooterSearch/>}/>
         <Route path="/dircardphrase" element={<DirectoryCardPhrase/>}/>
+        <Route path="/dircardquiz" element={<DirectoryCardQuiz/>}/>
       </Routes>
     </>
   )

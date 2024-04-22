@@ -7,6 +7,7 @@ import Navbar from "../../Components/Navbar/Navbar.jsx";
 
 import "./MainDir.css";
 import DirectoryCardPhrase from "../../Components/DirectoryCard/DirectoryCardPhrase.jsx";
+import DirectoryCardQuiz from "../../Components/DirectoryCard/DirectoryCardQuiz.jsx";
 
 function MainDir() {
   const navigate = useNavigate();
@@ -45,9 +46,11 @@ function MainDir() {
           title="Combinations"
         />
       </div>
-      <div onClick={() => navigate("/Phrases")}>
-        <DirectoryCardPhrase
-        />
+      <div onClick={() => navigate("/phrases")}>
+        <DirectoryCardPhrase/>
+      </div>
+      <div onClick={() => navigate("/quiz")}>
+        <DirectoryCardQuiz/>
       </div>
       <FooterSearch />
     </div>
