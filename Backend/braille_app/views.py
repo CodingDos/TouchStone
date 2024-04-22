@@ -24,10 +24,21 @@ class BrailleDetail(generics.RetrieveAPIView):
 
     def get_queryset(self):
         info = self.kwargs['info']
-        binaryinfo = 0
-        if info.isdigit() :
-            binaryinfo = int(info)
-        return Braille.objects.filter(Q(english=info) | Q(binary=binaryinfo))
+        return Braille.objects.filter(Q(english=info) | Q(binary=info))
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        obj = generics.get_object_or_404(queryset)
+        self.check_object_permissions(self.request, obj)
+        return obj
+
+class BrailleDetailSpecific(generics.RetrieveAPIView):
+    serializer_class = BrailleSerializer
+
+    def get_queryset(self):
+        info = self.kwargs['info']
+        category = self.kwargs['category']
+        return Braille.objects.filter((Q(english=info) | Q(binary=info)) & Q(category=category))
 
     def get_object(self):
         queryset = self.get_queryset()

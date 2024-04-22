@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import Home, BrailleList, BrailleDetail, WordsList, WordDetail, PhrasesList, PhraseDetail, PhraseIdDetail
+from .views import Home, BrailleList, BrailleDetail, WordsList, WordDetail, PhrasesList, PhraseDetail, PhraseIdDetail, BrailleDetailSpecific
 
 urlpatterns = [
         path('', Home.as_view(), name='home'),
         path('braille/', BrailleList.as_view(), name='braille-list'),
         path('braille/<str:info>/', BrailleDetail.as_view(), name='braille-detail'),
+        path('braille/<str:info>/<str:category>/', BrailleDetailSpecific.as_view(), name='braille-specific'),
         path('words/', WordsList.as_view(), name='word-list'),
         path('words/<str:word>/', WordDetail.as_view(), name='word-detail'),
         path('phrases/', PhrasesList.as_view(), name='phrase-list'),
