@@ -29,7 +29,7 @@ function DirectoryCardPhrase(props) {
 
 
   return (
-    <div className="dircard">
+    <div >
       <div className="dircard-examples">
         <div className="dircard-example1">
           <h3>{props.title}</h3>
