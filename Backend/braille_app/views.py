@@ -83,7 +83,7 @@ class PhrasesList(generics.ListAPIView):
     queryset = Phrases.objects.all()
     serializer_class = PhraseSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['phrase']
+    search_fields = ['phrase', 'category']
 
 
 class PhraseDetail(generics.RetrieveAPIView):
