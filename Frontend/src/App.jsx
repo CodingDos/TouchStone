@@ -19,6 +19,9 @@ import FlashcardsNumber from "./Pages/QuizDir/QuizTopics/Flashcards/FlashcardsNu
 import FlashcardsPhrases from "./Pages/QuizDir/QuizTopics/Flashcards/FlashcardsPhrases.jsx";
 import Matching from "./Pages/QuizDir/QuizTopics/Matching/Matching.jsx";
 import FillIn from "./Pages/QuizDir/QuizTopics/FillIn/FillIn.jsx";
+import QuizDir from "./Pages/QuizDir/QuizDir.jsx";
+import PhrasesDir from "./Pages/PhrasesTopicDir/PhrasesDir/PhrasesDir.jsx"
+import Phrases from "./Pages/PhrasesTopicDir/PhrasesDir/Phrases/Phrases.jsx"
 
 import DirectoryCard from "./Components/DirectoryCard/DirectoryCard.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
@@ -26,7 +29,7 @@ import Card from "./Components/Card/Card.jsx";
 import FooterSearch from "./Components/FooterSearch/FooterSearch.jsx";
 import DirectoryCardPhrase from "./Components/DirectoryCard/DirectoryCardPhrase.jsx";
 import DirectoryCardQuiz from "./Components/DirectoryCard/DirectoryCardQuiz.jsx";
-import QuizDir from "./Pages/QuizDir/QuizDir.jsx";
+
 import "./App.css";
 
 function App() {
@@ -45,7 +48,11 @@ function App() {
         <Route path="/combo/:id" element={<Combo />} />
         <Route path="/specialchardir" element={<SpecialCharDir />} />
         <Route path="/specialchar/:id" element={<SpecialChar />} />
+       
+        {/* Phrase Routes */}
         <Route path="/phrases" element={<PhrasesTopicDirectory />} />
+        <Route path="/phrases/:topic" element={<PhrasesDir/>}/>
+        <Route path="/phrases/:topic/:word" element={<Phrases/>}/>
 
         {/* Quiz Routes */}
         <Route path="/quiz" element={<QuizDir />} />
