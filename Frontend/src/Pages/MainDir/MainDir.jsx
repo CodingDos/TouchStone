@@ -47,7 +47,10 @@ function MainDir() {
         />
       </div>
       <div onClick={() => navigate("/phrases")}>
-        <DirectoryCardPhrase/>
+        <DirectoryCardPhrase
+        title="Hello"
+        category="Common Phrases"
+        />
       </div>
       <div onClick={() => navigate("/quiz")}>
         <DirectoryCardQuiz/>

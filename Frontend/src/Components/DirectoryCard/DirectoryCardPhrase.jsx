@@ -41,12 +41,24 @@ function DirectoryCardPhrase(props) {
 		getImg4();
 	},[]);
 
+	const [phrase, setPhrase] = useState();
+
+	useEffect(() => {
+		const phrase = props.title.toLowerCase().split("")
+		setPhrase(phrase)
+		const binaryarr = []
+
+
+	},[])
+	 
+
 
   return (
     <div className="dircard">
     <div className="dircard-examples">
       <div className="dircard-example1">
-        <h3>Hello</h3>
+        <h3>{props.title}</h3>
+		
         <img className="dircard-braille-img" src={img1?.braille_img} />
         <img className="dircard-braille-img" src={img2?.braille_img} />
         <img className="dircard-braille-img" src={img3?.braille_img} />
@@ -54,7 +66,7 @@ function DirectoryCardPhrase(props) {
         <img className="dircard-braille-img" src={img4?.braille_img} />
       </div>
     </div>
-    <h4>Common Phrases</h4>
+    <h4>{props.category}</h4>
   </div>
   )
 }
