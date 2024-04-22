@@ -16,9 +16,20 @@
 .dircard-examples{
     display: flex;
     justify-content: space-around;
+
 }
 
 .dircard-braille-img{
     height: 4rem;
 }
 
+.fa-long-arrow-right{
+    font-size: 40px;
+}
+
+.dircard-quiz{
+
+    display: flex;
+    align-items: center;
+    gap:3rem;
+}
