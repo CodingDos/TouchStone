@@ -11,6 +11,15 @@ export const getCharacters = async () => {
     }
 }
 
+export const getSpecificCharacter = async (info, category) => {
+	try {
+		const resp = await api.get(`/braille/${info}/${category}/`);
+		return resp.data;
+	} catch (error) {
+		throw error;
+	}
+}
+
 export const getCharacter = async (info) => {
 	try {
 		const resp = await api.get(`/braille/${info}`);
@@ -109,3 +118,31 @@ export const getPhrase = async (phrase) => {
 		throw error;
 	}
 }
+
+export const getSignPhrases = async (phrase) => {
+	try {
+		const resp = await api.get(`/phrases/?search=Sgn`);
+		return resp.data;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export const getTimePhrases = async (phrase) => {
+	try {
+		const resp = await api.get(`/phrases/?search=Tim`);
+		return resp.data;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export const getDirectionPhrases = async (phrase) => {
+	try {
+		const resp = await api.get(`/phrases/?search=Dir`);
+		return resp.data;
+	} catch (error) {
+		throw error;
+	}
+}
+
