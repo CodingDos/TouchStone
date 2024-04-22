@@ -14,6 +14,9 @@ import SpecialCharDir from "./Pages/SpecialCharDir/SpecialCharDir.jsx";
 import SpecialChar from "./Pages/SpecialCharDir/SpecialChar/SpecialChar.jsx";
 import PhrasesTopicDirectory from "./Pages/PhrasesTopicDir/PhrasesTopicDir.jsx";
 import Flashcards from "./Pages/QuizDir/QuizTopics/Flashcards/Flashcards.jsx";
+import FlashcardsAlpha from "./Pages/QuizDir/QuizTopics/Flashcards/FlashcardsAlpha.jsx";
+import FlashcardsNumber from "./Pages/QuizDir/QuizTopics/Flashcards/FlashcardsNumber.jsx";
+import FlashcardsPhrases from "./Pages/QuizDir/QuizTopics/Flashcards/FlashcardsPhrases.jsx";
 import Matching from "./Pages/QuizDir/QuizTopics/Matching/Matching.jsx";
 import FillIn from "./Pages/QuizDir/QuizTopics/FillIn/FillIn.jsx";
 
@@ -43,10 +46,20 @@ function App() {
         <Route path="/specialchardir" element={<SpecialCharDir />} />
         <Route path="/specialchar/:id" element={<SpecialChar />} />
         <Route path="/phrases" element={<PhrasesTopicDirectory />} />
+
+        {/* Quiz Routes */}
         <Route path="/quiz" element={<QuizDir />} />
         <Route path="/quiz/flashcards" element={<Flashcards />} />
         <Route path="/quiz/matching" element={<Matching />} />
         <Route path="/quiz/fillin" element={<FillIn />} />
+        {/* Quiz Flash Cards */}
+        <Route path="/quiz/flashcards" element={<Flashcards />} />
+        <Route path="/quiz/flashcards/alphabet" element={<FlashcardsAlpha />} />
+        <Route path="/quiz/flashcards/numbers" element={<FlashcardsNumber />} />
+        <Route
+          path="/quiz/flashcards/phrases"
+          element={<FlashcardsPhrases />}
+        />
 
         {/* component routes */}
         <Route path="/dircard" element={<DirectoryCard />} />
