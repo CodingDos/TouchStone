@@ -24,6 +24,7 @@ function NumberDir() {
   return (
     <div className="numberdir">
       <Navbar />
+      <h1 className="directory-title">Number</h1>
       <div className="number-container">
         {cards.map((card, idx) => (
           <div

@@ -57,10 +57,11 @@ function Numbers() {
     <div className="number">
       <Navbar />
       <div className="number-carosel">
+        <h1 className="directory-title">Number</h1>
         <div className="carosel">
           <Card
             className="numcard"
-            width={"80%"}
+            width={"75%"}
             height={"auto"}
             title={card.english}
             brailleimg={card.braille_img}

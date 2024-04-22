@@ -51,6 +51,7 @@ function Combo() {
     <div className="combo">
       <Navbar/>
       <div className="combo-carosel">
+        <h1 className="directory-title">Combos</h1>
         <div className="carosel">
           <Card
             className="combocard"

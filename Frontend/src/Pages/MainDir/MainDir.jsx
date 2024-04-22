@@ -6,6 +6,7 @@ import DirectoryCard from "../../Components/DirectoryCard/DirectoryCard.jsx";
 import Navbar from "../../Components/Navbar/Navbar.jsx";
 
 import "./MainDir.css";
+import DirectoryCardPhrase from "../../Components/DirectoryCard/DirectoryCardPhrase.jsx";
 
 function MainDir() {
   const navigate = useNavigate();
@@ -42,6 +43,10 @@ function MainDir() {
           example2="CH"
           example3="ST"
           title="Combinations"
+        />
+      </div>
+      <div onClick={() => navigate("/Phrases")}>
+        <DirectoryCardPhrase
         />
       </div>
       <FooterSearch />

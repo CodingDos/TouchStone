@@ -1,0 +1,42 @@
+.punctuation {
+    height: 100vh;
+  }
+  
+  .punctuation-carosel {
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    padding-top: 100px;
+  }
+  
+  .carosel {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    white-space: nowrap;
+    gap: 3rem;
+    padding-left: 0;
+  }
+  
+  .punctuationcard {
+    display: inline-block;
+  }
+  
+  .punctuation-btns{
+      display: flex;
+      justify-content: space-evenly;
+  }
+  
+  .punctuation-btns-back, .punctuation-btns-forward{
+      border: 2px solid transparent;
+  }
+  
+  .punctuation-btns-back:hover, .punctuation-btns-forward:hover{
+      border: 2px solid black;
+  }
+  
+  .fa-angle-left, .fa-angle-right{
+      font-size: 30px;
+  }

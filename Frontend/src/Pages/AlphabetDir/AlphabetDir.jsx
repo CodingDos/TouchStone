@@ -22,6 +22,7 @@ function AlphabetDir() {
   return (
     <div className="alphabetdir">
       <Navbar />
+      <h1 className="directory-title">Alphabet</h1>
       <div className="alphabet-container">
         {cards.map((card, idx) => (
           <div

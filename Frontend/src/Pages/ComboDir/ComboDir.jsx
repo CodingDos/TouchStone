@@ -24,6 +24,7 @@ function ComboDir() {
   return (
     <div className="combodir">
       <Navbar />
+      <h1 className="directory-title">Combos</h1>
       <div className="combo-container">
         {cards.map((card, idx) => (
           <div

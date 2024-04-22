@@ -28,4 +28,7 @@
     gap: 1.5rem;
 }
 
-
+.directory-title{
+    margin: 0;
+    font-size: 35px;
+}

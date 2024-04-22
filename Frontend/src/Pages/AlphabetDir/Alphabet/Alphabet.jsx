@@ -51,10 +51,11 @@ function Alphabet() {
     <div className="alphabet">
       <Navbar />
       <div className="alphabet-carosel">
+        <h1 className="directory-title">Alphabet</h1>
         <div className="carosel">
           <Card
             className="alphacard"
-            width={"80%"}
+            width={"60%"}
             height={"auto"}
             title={card.english}
             brailleimg={card.braille_img}
