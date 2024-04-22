@@ -21,7 +21,7 @@ function Navbar() {
           <Link to="/combodir" className="burgermenu-link">Combos</Link>
           <Link to="/specialchardir" className="burgermenu-link">Special Characters</Link>
           <Link to="/phrases" className="burgermenu-link">Phrases</Link>
-          <Link className="burgermenu-link">Quizes</Link>
+          <Link to ="/quiz" className="burgermenu-link">Quizes</Link>
           <Link to='/devteam' className="burgermenu-link">About Us</Link>
         </Menu>
       </div>

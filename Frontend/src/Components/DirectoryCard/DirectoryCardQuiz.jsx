@@ -11,7 +11,7 @@ function DirectoryCardQuiz() {
         <h1 className='question'>?</h1>
       </div>
     </div>
-    <h4>Quiz</h4>
+    <h4>Quizes</h4>
   </div>
   )
 }
