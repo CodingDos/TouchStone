@@ -4,6 +4,7 @@
     align-items: center;
     border: 2px solid black;
     border-radius: 1rem;
+
     /* height: 30%;
     width: 30%; */
     background-color: white;
@@ -26,4 +27,5 @@
 .card-title{
     font-size: 40px;
     margin: 0;
+    color: black
 }

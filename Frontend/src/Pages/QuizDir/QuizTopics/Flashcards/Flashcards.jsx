@@ -1,10 +1,7 @@
-import React from 'react'
-import "./Flashcards.css"
+import "./Flashcards.css";
 
 function Flashcards() {
-  return (
-    <div>Flashcards</div>
-  )
+  return <div>Flashcards</div>;
 }
 
-export default Flashcards
+export default Flashcards;
