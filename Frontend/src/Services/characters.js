@@ -11,6 +11,15 @@ export const getCharacters = async () => {
     }
 }
 
+export const getSpecificCharacter = async (info, category) => {
+	try {
+		const resp = await api.get(`/braille/${info}/${category}/`);
+		return resp.data;
+	} catch (error) {
+		throw error;
+	}
+}
+
 export const getCharacter = async (info) => {
 	try {
 		const resp = await api.get(`/braille/${info}/`);
