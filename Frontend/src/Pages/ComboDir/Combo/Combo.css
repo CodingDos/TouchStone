@@ -1,0 +1,43 @@
+.combo {
+    height: 100vh;
+  }
+  
+  .combo-carosel {
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    padding-top: 100px;
+  }
+  
+  .carosel {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    white-space: nowrap;
+    gap: 3rem;
+    padding-left: 0;
+  }
+  
+  .combocard {
+    display: inline-block;
+  }
+  
+  .combo-btns{
+      display: flex;
+      justify-content: space-evenly;
+  }
+  
+  .combo-btns-back, .combo-btns-forward{
+      border: 2px solid transparent;
+  }
+  
+  .combo-btns-back:hover, .combo-btns-forward:hover{
+      border: 2px solid black;
+  }
+  
+  .fa-angle-left, .fa-angle-right{
+      font-size: 30px;
+  }
+  

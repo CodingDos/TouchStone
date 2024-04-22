@@ -12,6 +12,7 @@ import ComboDir from "./Pages/ComboDir/ComboDir.jsx"
 import Combo from "./Pages/ComboDir/Combo/Combo.jsx"
 import SpecialCharDir from "./Pages/SpecialCharDir/SpecialCharDir.jsx"
 import SpecialChar from "./Pages/SpecialCharDir/SpecialChar/SpecialChar.jsx"
+import PhrasesTopicDirectory from "./Pages/PhrasesTopicDir/PhrasesTopicDir.jsx"
 
 import DirectoryCard from "./Components/DirectoryCard/DirectoryCard.jsx"
 import Navbar from "./Components/Navbar/Navbar.jsx"
@@ -19,6 +20,7 @@ import Card from "./Components/Card/Card.jsx"
 import FooterSearch from "./Components/FooterSearch/FooterSearch.jsx"
 
 import './App.css'
+import DirectoryCardPhrase from "./Components/DirectoryCard/DirectoryCardPhrase.jsx"
 
 
 function App() {
@@ -32,17 +34,19 @@ function App() {
         <Route path="/alphabet/:id" element={<Alphabet/>}/>
         <Route path="/alphabetdir" element={<AlphabetDir/>}/>
         <Route path="/numberdir" element={<NumberDir/>}/>
-        <Route path="/number" element={<Number/>}/>
+        <Route path="/number/:id" element={<Number/>}/>
         <Route path="/combodir" element={<ComboDir/>}/>
-        <Route path="/combo" element={<Combo/>}/>
+        <Route path="/combo/:id" element={<Combo/>}/>
         <Route path="/specialchardir" element={<SpecialCharDir/>}/>
-        <Route path="/specialchar" element={<SpecialChar/>}/>
+        <Route path="/specialchar/:id" element={<SpecialChar/>}/>
+        <Route path="/phrases" element={<PhrasesTopicDirectory/>}/>
 
-        {/* test routes */}
+        {/* component routes */}
         <Route path="/dircard" element={<DirectoryCard/>}/>
         <Route path="/nav" element={<Navbar/>}/>
         <Route path="/card" element={<Card/>}/>
         <Route path="/search" element={<FooterSearch/>}/>
+        <Route path="/dircardphrase" element={<DirectoryCardPhrase/>}/>
       </Routes>
     </>
   )

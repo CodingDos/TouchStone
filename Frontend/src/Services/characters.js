@@ -22,7 +22,7 @@ export const getSpecificCharacter = async (info, category) => {
 
 export const getCharacter = async (info) => {
 	try {
-		const resp = await api.get(`/braille/${info}/`);
+		const resp = await api.get(`/braille/${info}`);
 		return resp.data;
 	} catch (error) {
 		throw error;
@@ -67,7 +67,7 @@ export const getCombos = async () => {
 
 export const getBySearch = async (search) => {
 	try {
-		const resp = await api.get(`/braille/?search=${search}/`);
+		const resp = await api.get(`/braille/?search=${search}`);
 		return resp.data;
 	} catch (error) {
 		throw error;

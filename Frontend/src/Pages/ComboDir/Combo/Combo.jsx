@@ -1,9 +1,78 @@
-import React from 'react'
+import Navbar from "../../../Components/Navbar/Navbar.jsx";
+import Card from "../../../Components/Card/Card.jsx";
+import { getCharacter, getCombos } from "../../../Services/characters.js";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import FooterSearch from "../../../Components/FooterSearch/FooterSearch.jsx";
 import "./Combo.css"
 
 function Combo() {
+  const [cards, setCards] = useState([])
+  const [card, setCard] = useState([]);
+  const {id: cardId} = useParams()
+
+  const navigate = useNavigate()
+  
+  useEffect(() => {
+    const getCard = async () => {
+      const test = await getCharacter(cardId);
+      setCard(test);
+    };
+    getCard();
+  }, [cardId]);
+
+  useEffect(() => {
+    const getCards = async () => {
+      const test = await getCombos();
+      setCards(test);
+    };
+    getCards();
+  }, []);
+
+  const onClickBack = async() => {
+    const currentidx = cards.findIndex(item => item.english ===cardId)
+    const previousidx = currentidx - 1
+    if(previousidx === -1 ){
+      navigate(`/combo/${cards[cards.length-1].english}`)
+    }else{
+    navigate(`/combo/${cards[previousidx].english}`)
+  }}
+
+  const onClickForward = async() => {
+    const currentidx = cards.findIndex(item => item.english ===cardId)
+    const nextidx = currentidx + 1
+    if(nextidx === 19 ){
+      navigate(`/combo/${cards[0].english}`)
+    }else{
+    navigate(`/combo/${cards[nextidx].english}`)
+  }}
+
   return (
-    <div>Combo</div>
+    <div className="combo">
+      <Navbar/>
+      <div className="combo-carosel">
+        <h1 className="directory-title">Combos</h1>
+        <div className="carosel">
+          <Card
+            className="combocard"
+            width={"80%"}
+            height={"auto"}
+            title={card.english}
+            brailleimg={card.braille_img}
+          />
+        </div>
+        <div className="combo-btns">
+          <button onClick={onClickBack} className="combo-btns-back">
+            <i class="fa fa-angle-left"></i>
+          </button>
+          <button onClick={onClickForward} className="combo-btns-forward">
+            <i class="fa fa-angle-right"></i>
+          </button>
+        </div>
+      </div> 
+      
+      <FooterSearch/>
+    </div>
   )
 }
 

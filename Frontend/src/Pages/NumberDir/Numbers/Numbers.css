@@ -1,0 +1,43 @@
+.number {
+    height: 100vh;
+  }
+  
+  .number-carosel {
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    padding-top: 100px;
+  }
+  
+  .carosel {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    white-space: nowrap;
+    gap: 3rem;
+    padding-left: 0;
+  }
+  
+  .numcard {
+    display: inline-block;
+  }
+  
+  .number-btns{
+      display: flex;
+      justify-content: space-evenly;
+  }
+  
+  .number-btns-back, .number-btns-forward{
+      border: 2px solid transparent;
+  }
+  
+  .number-btns-back:hover, .number-btns-forward:hover{
+      border: 2px solid black;
+  }
+  
+  .fa-angle-left, .fa-angle-right{
+      font-size: 30px;
+  }
+  

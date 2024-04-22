@@ -51,21 +51,27 @@ function Alphabet() {
     <div className="alphabet">
       <Navbar />
       <div className="alphabet-carosel">
+        <h1 className="directory-title">Alphabet</h1>
         <div className="carosel">
-        <Card className="alphacard" 
-        width={"80%"} 
-        height={"auto"}
-        title={card.english}
-        brailleimg={card.braille_img}
-        refimg={card.learning_img} 
-        />
+          <Card
+            className="alphacard"
+            width={"60%"}
+            height={"auto"}
+            title={card.english}
+            brailleimg={card.braille_img}
+            refimg={card.learning_img}
+          />
         </div>
         <div className="alphabet-btns">
-          <button onClick={onClickBack} className="alphabet-btns-back"><i class='fa fa-angle-left' ></i></button>
-          <button onClick={onClickForward} className="alphabet-btns-forward"><i class='fa fa-angle-right'></i></button>
+          <button onClick={onClickBack} className="alphabet-btns-back">
+            <i class="fa fa-angle-left"></i>
+          </button>
+          <button onClick={onClickForward} className="alphabet-btns-forward">
+            <i class="fa fa-angle-right"></i>
+          </button>
         </div>
       </div>
-      <FooterSearch/>
+      <FooterSearch />
     </div>
   );
 }

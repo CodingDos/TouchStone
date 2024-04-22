@@ -20,7 +20,7 @@ function Navbar() {
           <Link to="/numberdir" className="burgermenu-link">Numbers</Link>
           <Link to="/combodir" className="burgermenu-link">Combos</Link>
           <Link to="/specialchardir" className="burgermenu-link">Special Characters</Link>
-          <Link className="burgermenu-link">Phrases</Link>
+          <Link to="/phrases" className="burgermenu-link">Phrases</Link>
           <Link className="burgermenu-link">Quizes</Link>
           <Link to='/devteam' className="burgermenu-link">About Us</Link>
         </Menu>
