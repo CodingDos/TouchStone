@@ -14,28 +14,37 @@ function MainDir() {
     <div className="maindir">
       <Navbar />
       <div onClick={() => navigate("/alphabetdir")}>
-        <DirectoryCard 
-        example1="Aa" 
-        example2="Bb"
-        example3="Cc"
-        title="Alphabet"/>
+        <DirectoryCard
+          example1="Aa"
+          example2="Bb"
+          example3="Cc"
+          title="Alphabet"
+        />
       </div>
-      <DirectoryCard 
+      <div onClick={() => navigate("/numberdir")}>
+        <DirectoryCard 
         example1="1" 
-        example2="2"
-        example3="3"
+        example2="2" 
+        example3="3" 
         title="Numbers" />
-      <DirectoryCard  
-        example1="Space" 
-        example2="!"
-        example3="Letter"
-        title="Special Characters"/>
-      <DirectoryCard  
-        example1="FOR" 
-        example2="THE"
-        example3="ST"
-        title="Combos"/>
-      <FooterSearch/>
+      </div>
+      <div onClick={() => navigate("/specialchardir")}>
+        <DirectoryCard
+          example1="Space"
+          example2="!"
+          example3="Letter"
+          title="Punctuation & Indicators"
+        />
+      </div>
+      <div onClick={() => navigate("/combodir")}>
+        <DirectoryCard
+          example1="ER"
+          example2="CH"
+          example3="ST"
+          title="Combinations"
+        />
+      </div>
+      <FooterSearch />
     </div>
   );
 }
