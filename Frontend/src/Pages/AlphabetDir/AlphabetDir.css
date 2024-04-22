@@ -9,6 +9,25 @@
     padding-bottom: 55px;
 }
 
+.alphabet-container{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+
+}
+
+.alphabet-card{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+}
+
 .alphabet-btns{
     display: flex;
     justify-content: space-evenly;
@@ -25,3 +44,4 @@
 .fa-angle-left, .fa-angle-right{
     font-size: 30px;
 }
+

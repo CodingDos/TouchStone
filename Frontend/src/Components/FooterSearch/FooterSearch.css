@@ -44,6 +44,36 @@
 
 /* modal css */
 
+.ReactModal__Overlay{
+    height:80%;
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    background-color: #C7CFBB;
+}
+
 .search-result-modal{
-    
+    display: flex;
+    background-color: #C7CFBB;
+    height: 100%;
+    width: 100%;
+    border: solid 2px #373a47;
+}
+
+
+
+.modal-close-btn{
+    background-color: #373a47;
+    color: #E8E7DD;
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer{
+    justify-self: center;
+    align-self: center;
 }
