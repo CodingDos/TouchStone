@@ -1,6 +1,6 @@
 import Navbar from "../../../Components/Navbar/Navbar.jsx";
 import Card from "../../../Components/Card/Card.jsx";
-import { getBySearch, getPunctuation } from "../../../Services/characters.js";
+import { getCharacter, getPunctuation } from "../../../Services/characters.js";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import FooterSearch from "../../../Components/FooterSearch/FooterSearch.jsx";
@@ -17,7 +17,7 @@ function SpecialChar() {
   
   useEffect(() => {
     const getCard = async () => {
-      const test = await getBySearch(cardId);
+      const test = await getCharacter(cardId);
       console.log(test)
       setCard(test);
     };
@@ -33,22 +33,22 @@ function SpecialChar() {
   }, []);
 
   const onClickBack = async() => {
-    const currentidx = cards.findIndex(item => item.english ===cardId)
+    const currentidx = cards.findIndex(item => item.binary ===cardId)
     const previousidx = currentidx - 1
     if(previousidx === -1 ){
-      navigate(`/specialchar/${cards[cards.length-1].english}`)
+      navigate(`/specialchar/${cards[cards.length-1].binary}`)
     }else{
-    navigate(`/specialchar/${cards[previousidx].english}`)
+    navigate(`/specialchar/${cards[previousidx].binary}`)
   }}
 
   const onClickForward = async() => {
-    const currentidx = cards.findIndex(item => item.english === cardId)
+    const currentidx = cards.findIndex(item => item.binary === cardId)
     const nextidx = currentidx + 1
     console.log(currentidx, nextidx)
     if(nextidx === 19 ){
-      navigate(`/specialchar/${cards[0].english}`)
+      navigate(`/specialchar/${cards[0].binary}`)
     }else{
-    navigate(`/specialchar/${cards[nextidx].english}`)
+    navigate(`/specialchar/${cards[nextidx].binary}`)
   }}
 
   return (

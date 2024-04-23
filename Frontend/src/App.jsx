@@ -49,22 +49,28 @@ function App() {
         <Route path="/combo/:id" element={<Combo />} />
         <Route path="/specialchardir" element={<SpecialCharDir />} />
         <Route path="/specialchar/:id" element={<SpecialChar />} />
-       
+
         {/* Phrase Routes */}
         <Route path="/phrases" element={<PhrasesTopicDirectory />} />
-        <Route path="/phrases/:topic" element={<PhrasesDir/>}/>
-        <Route path="/phrases/:topic/:word" element={<Phrases/>}/>
+        <Route path="/phrases/:topic" element={<PhrasesDir />} />
+        <Route path="/phrases/:topic/:word" element={<Phrases />} />
 
         {/* Quiz Routes */}
         <Route path="/quiz" element={<QuizDir />} />
         <Route path="/quiz/flashcards" element={<Flashcards />} />
         <Route path="/quiz/matching" element={<Matching />} />
         <Route path="/quiz/fillin" element={<FillIn />} />
-	<Route path="/quiz/topics" element={<QuizTopics />} />
+	      <Route path="/quiz/topics" element={<QuizTopics />} />
         {/* Quiz Flash Cards */}
         <Route path="/quiz/flashcards" element={<Flashcards />} />
-        <Route path="/quiz/flashcards/alphabet" element={<FlashcardsAlpha />} />
-        <Route path="/quiz/flashcards/numbers" element={<FlashcardsNumber />} />
+        <Route
+          path="/quiz/flashcards/alphabet/:id"
+          element={<FlashcardsAlpha />}
+        />
+        <Route
+          path="/quiz/flashcards/numbers/:id"
+          element={<FlashcardsNumber />}
+        />
         <Route
           path="/quiz/flashcards/phrases"
           element={<FlashcardsPhrases />}

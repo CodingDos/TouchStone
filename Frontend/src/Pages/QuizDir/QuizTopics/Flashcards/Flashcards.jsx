@@ -10,10 +10,10 @@ function Flashcards() {
     <div>
       <Navbar />
       <h1>Flashcards</h1>
-      <div onClick={() => navigate("/quiz/flashcards/alphabet")}>
+      <div onClick={() => navigate("/quiz/flashcards/alphabet/Aa")}>
         <Card title="Alphabet" height="150px" />
       </div>
-      <div onClick={() => navigate("/quiz/flashcards/numbers")}>
+      <div onClick={() => navigate("/quiz/flashcards/numbers/0")}>
         <Card title="Numbers" height="150px" />
       </div>
       <div onClick={() => navigate("/quiz/flashcards/phrases")}>
