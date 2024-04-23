@@ -64,10 +64,10 @@ function Alphabet() {
         </div>
         <div className="alphabet-btns">
           <button onClick={onClickBack} className="alphabet-btns-back">
-            <i class="fa fa-angle-left"></i>
+            <i className="fa fa-angle-left"></i>
           </button>
           <button onClick={onClickForward} className="alphabet-btns-forward">
-            <i class="fa fa-angle-right"></i>
+            <i className="fa fa-angle-right"></i>
           </button>
         </div>
       </div>

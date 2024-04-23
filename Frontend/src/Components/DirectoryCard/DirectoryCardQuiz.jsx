@@ -7,7 +7,7 @@ function DirectoryCardQuiz() {
     <div className="dircard-examples">
       <div className="dircard-quiz">
         <img className="dircard-braille-img" src="src/assets/braille/braille_a_100000.png" />
-        <i class="fa fa-long-arrow-right"></i>
+        <i className="fa fa-long-arrow-right"></i>
         <h1 className='question'>?</h1>
       </div>
     </div>
