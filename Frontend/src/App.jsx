@@ -22,6 +22,7 @@ import FillIn from "./Pages/QuizDir/QuizTopics/FillIn/FillIn.jsx";
 import QuizDir from "./Pages/QuizDir/QuizDir.jsx";
 import PhrasesDir from "./Pages/PhrasesTopicDir/PhrasesDir/PhrasesDir.jsx"
 import Phrases from "./Pages/PhrasesTopicDir/PhrasesDir/Phrases/Phrases.jsx"
+import QuizTopics from "./Pages/QuizDir/QuizTopics/QuizTopics.jsx"
 
 import DirectoryCard from "./Components/DirectoryCard/DirectoryCard.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
@@ -59,6 +60,7 @@ function App() {
         <Route path="/quiz/flashcards" element={<Flashcards />} />
         <Route path="/quiz/matching" element={<Matching />} />
         <Route path="/quiz/fillin" element={<FillIn />} />
+	<Route path="/quiz/topics" element={<QuizTopics />} />
         {/* Quiz Flash Cards */}
         <Route path="/quiz/flashcards" element={<Flashcards />} />
         <Route path="/quiz/flashcards/alphabet" element={<FlashcardsAlpha />} />
