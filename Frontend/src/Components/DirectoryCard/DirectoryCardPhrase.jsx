@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getCharacter } from "../../Services/characters.js";
 import "./DirectoryCard.css";
 
+
 function DirectoryCardPhrase(props) {
 
   const [phrase, setPhrase] = useState();

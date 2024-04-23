@@ -1,12 +1,13 @@
-import api from "./apiConfig.js"
+import api from './apiConfig';
 
-//get all characters
-
-export const getAiResponse = async () => {
+export const getAiResponse = async (options) => {
+    console.log(options)
     try {
-        const response = await api.get("");
+        const response = await api.post('/api/gemini/', options);
+        console.log(response.data)
         return response.data;
-    }catch (error){
+    } catch (error) {
         throw error;
     }
-}
+};
+
