@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+Modal.setAppElement('#root');
 import { useState } from "react";
 import { getAiResponse } from "../../Services/ai.js";
 import "./FooterSearch.css";
@@ -8,6 +9,8 @@ function FooterSearch() {
   const [search, setSearch] = useState("");
   const [answer, setAnswer] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
+
+  console.log("this is search", search)
 
   function openModal() {
     setModalOpen(true);
@@ -21,19 +24,18 @@ function FooterSearch() {
     openModal();
     try {
       const options = {
-        method: "POST",
-        body: JSON.stringify({
-          message: search,
-        }),
-        headers: { "Content-Type": "application/json" },
+        input: search
       };
+      console.log(options)
       const response = await getAiResponse(options);
+      console.log(response)
       setAnswer(response);
     } catch (error) {
       console.error(error);
     }
   };
 
+  console.log("this is answer" , answer)
   return (
     <div className="footer">
       <Modal
@@ -42,10 +44,21 @@ function FooterSearch() {
       onRequestClose={closeModal}
       contentLabel="Example"
       >
-        <div className="search-result">
-          <div>
+        <div className="root-modal-close-btn">
           <button className='modal-close-btn' onClick={closeModal}><i class="fa fa-remove"></i></button>
-            <p className="answer">{search} in Braille is: {answer}</p>
+        </div>
+        <div className="root-search-result">
+          <div className="search-result">
+            <p className="render-search-question">
+              You Searched For:
+            {search} 
+            </p>
+          </div>
+          <div className="search-answer"> 
+            <p className="render-search-answer">
+              Result: 
+            {answer.response}
+            </p>
           </div>
         </div>
       </Modal>

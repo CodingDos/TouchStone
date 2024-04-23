@@ -53,10 +53,8 @@
 }
 
 .search-result-modal{
-    display: flex;
     background-color: #C7CFBB;
     height: 100%;
-    width: 100%;
     border: solid 2px #373a47;
 }
 
@@ -73,7 +71,28 @@
     align-items: center;
 }
 
-.answer{
-    justify-self: center;
-    align-self: center;
+
+.root-answer {
+    border-style: solid;
+}
+
+.root-modal-close-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.root-search-result {
+    border-style: solid;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.search-result {
+    height: 25%;
+}
+
+.search-answer {
+    height: 60%;
 }
