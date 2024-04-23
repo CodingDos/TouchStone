@@ -18,7 +18,7 @@ function QuizDir() {
         <div onClick={() => navigate("/quiz/matching")}>
           <Card title="Matching" height="150px" />
         </div>
-        <div onClick={() => navigate("/quiz/fillin")}>
+        <div onClick={() => navigate("/quiz/topics", { state : { quiz : "fillin" } })}>
           <Card title="Fill In" height="150px" />
         </div>
       </div>
