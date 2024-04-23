@@ -46,7 +46,7 @@ function MainDir() {
           title="Combinations"
         />
       </div>
-      <div onClick={() => navigate("/phrases")}>
+      <div className="dircard" onClick={() => navigate("/phrases")}>
         <DirectoryCardPhrase
         title="Hello"
         category="Common Phrases"
