@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -19,15 +18,18 @@ function ComboDir() {
     getCards();
   }, []);
 
-  console.log(cards)
+  console.log(cards);
 
   return (
     <div className="combodir">
       <Navbar />
-      <h1 className="directory-title">Combos</h1>
+      <h1 onClick={() => navigate("/home")} className="directory-title">
+        Combos
+      </h1>
       <div className="combo-container">
         {cards.map((card, idx) => (
           <div
+            key={idx}
             className="combo-card"
             onClick={() => navigate(`/combo/${card.english}`)}
           >
