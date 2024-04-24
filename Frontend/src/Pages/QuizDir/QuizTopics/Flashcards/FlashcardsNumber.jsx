@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getNumbers } from "../../../../Services/characters.js";
@@ -93,6 +94,15 @@ function FlashcardsNumber() {
         </div>
       </div>
       <FooterSearch />
+=======
+import Navbar from "../../../../Components/Navbar/Navbar.jsx";
+
+function FlashcardsNumber() {
+
+  return ( 
+    <div>
+      <Navbar />
+>>>>>>> Stashed changes
     </div>
   );
 }

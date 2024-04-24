@@ -1,0 +1,8 @@
+.matching-alpha-container {
+    display: flex;
+    margin-top: 80px;
+}
+
+.matching-card {
+    height: 200px;
+}
