@@ -1,91 +1,58 @@
 import React from 'react'
 import "./PhrasesDir.css"
+import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react"
 import FooterSearch from '../../../Components/FooterSearch/FooterSearch.jsx'
 import Navbar from '../../../Components/Navbar/Navbar'
 import DirectoryCardPhrase from '../../../Components/DirectoryCard/DirectoryCardPhrase.jsx'
-
-
+import { getSignPhrases, getTimePhrases, getDirectionPhrases } from '../../../Services/characters.js'
 
 
 
 function PhrasesDir() {
 
+  const { topic } = useParams()
+  console.log("this is params for topic", topic)
   const navigate = useNavigate()
+  const [phrases, setPhrases] = useState([])
+
+  useEffect(() => {
+    const getPhrases = async () => {
+      let info
+      switch(topic) {
+        case 'Sgn':
+          info = await getSignPhrases()
+          break
+        case 'Dir':
+          info = await getDirectionPhrases()
+          break
+        case 'Tim':
+          info = await getTimePhrases()
+          break
+        default:
+          setPhrases([])
+          return
+      }
+      setPhrases(info) 
+    }
+    getPhrases()
+  }, [topic])
+  
  
   return (
     <div className='phrasesdir'>
       <Navbar />
-      <h1>Phrases</h1>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Women"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Men"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Exit"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Room"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Floor"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Stairs"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Elevator"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Level"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Office"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Restroom"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Entrance"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Accessible"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Lobby"
-      />
-      </div>
-      <div className="dircard" onClick={() => navigate("/phrases/Sgn/exit")}>
-      <DirectoryCardPhrase
-      title="Stop"
-      />
+      <h1 onClick={() => navigate(`/phrases/`)}>Phrases</h1>
+      <div className="phrase-container">
+        {phrases.map((phrase, idx) => (
+          <div className="dircard" onClick={() => navigate(`/phrases/${topic}/${phrase.phrase}`)}>
+            <DirectoryCardPhrase 
+            index={idx}
+            title={phrase.phrase}
+            />
+          </div>
+        ))}
       </div>
       <FooterSearch />
     </div>

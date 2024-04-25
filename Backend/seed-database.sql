@@ -107,6 +107,7 @@ INSERT INTO braille_app_phrases (phrase, category, img)
 	('Restroom', 'Sgn', ''),
 	('Entrance', 'Sgn', ''),
 	('Accessible', 'Sgn', ''),
+	('Stop', 'Sgn', ''),
 	('Lobby', 'Sgn', ''),
 	('Left', 'Dir', ''),
 	('Right', 'Dir', ''),
