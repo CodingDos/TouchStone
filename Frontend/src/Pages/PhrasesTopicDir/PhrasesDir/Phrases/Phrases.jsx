@@ -26,16 +26,9 @@ function Phrases() {
         console.error(error)
       }
     }
-    if(word) {
       getSinlgePhrase() 
-    }
   }, [word])
-
-  useEffect(() => {
-    setSinglePhrase({ phrase: 'Test', category: 'Sgn', img: '' });
-  }, []);
-  
-  
+   
 
 
   return (
