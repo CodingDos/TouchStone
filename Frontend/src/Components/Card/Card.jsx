@@ -2,11 +2,12 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./Card.css"
 
-function Card({height, width, title, refimg, brailleimg}) {  
+function Card({height, width, title, refimg, brailleimg, matched}) {  
 
   return (
     <div 
-    className='card'
+    className={`card ${matched ? 'matched' : ''}`}
+    // className='card'
     style={{
       'width': width,
       'height': height

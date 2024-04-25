@@ -44,11 +44,8 @@ function FooterSearch() {
         onRequestClose={closeModal}
         contentLabel="Example"
       >
-<<<<<<< Updated upstream
         <div className="root-modal-close-btn">
-          <button className="modal-close-btn" onClick={closeModal}>
-            <i className="fa fa-remove"></i>
-          </button>
+          <button className='modal-close-btn' onClick={closeModal}><i className="fa fa-remove"></i></button>
         </div>
         <div className="root-search-result">
           <div className="search-result">
@@ -62,12 +59,6 @@ function FooterSearch() {
               Result:
               {answer.response}
             </p>
-=======
-        <div className="search-result">
-          <div>
-          <button className='modal-close-btn' onClick={closeModal}><i className="fa fa-remove"></i></button>
-            <p className="answer">{search} in Braille is: {answer}</p>
->>>>>>> Stashed changes
           </div>
         </div>
       </Modal>
