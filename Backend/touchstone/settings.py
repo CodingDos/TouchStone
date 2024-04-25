@@ -25,6 +25,8 @@ SECRET_KEY = 'django-insecure-@v^sm99s3%&m@4j20(pdd&0$=g#8z+axt*m$8z8-@%igyh)rf*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+APPEND_SLASH = False
+
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 CORS_ALLOWED_ORIGINS = [
@@ -87,8 +89,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'touchstone',
         'HOST': 'localhost',
-        # 'USER': 'touchstone_admin',
-        # 'PASSWORD' : 'password',
+        'USER': 'touchstone_admin',
+        'PASSWORD' : 'password',
     }
 }
 
