@@ -1,0 +1,45 @@
+.dev-img {
+  border-radius: 50%;
+  height: 55%;
+  width: 55%;
+}
+
+.dev-roles {
+  font-weight: normal;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.dev-name {
+  margin: 5px;
+}
+
+.dev-website-container {
+  display: flex;
+  padding: 0 15px;
+}
+
+.website {
+  display: flex;
+  margin: 5px 0;
+  font-size: 16px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dev-website {
+  padding: auto;
+  margin: 5px;
+  font-size: 15px;
+}
+
+.a-tag {
+  padding: 5px 10px; /* Reduces padding and applies it evenly */
+  overflow: hidden; /* Prevents the content from spilling out */
+  text-overflow: ellipsis; /* Adds an ellipsis if the text overflows */
+  max-width: 70%; /* Limits the width of the anchor tag */
+}
+.dev-links {
+  color: black;
+  margin: 0 5px;
+}
