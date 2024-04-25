@@ -73,7 +73,8 @@ function MatchingAlpha() {
   };
 
   const handleBinaryCardClick = (index) => {
-    const clickedCard = pairs[index];
+    const clickedCard = brailleImg[index];
+    console.log(index)
     console.log(clickedCard);
     setSelectedBinaryCard(clickedCard);
   };
@@ -82,8 +83,8 @@ function MatchingAlpha() {
     //Test for rendering
     if (selectedAlphaCard.id === selectedBinaryCard.id) {
       console.log("Correct!");
-      setMatchedAlphaCards([...matchedAlphaCards, selectedAlphaCard]);
-      setMatchedBinaryCards([...matchedBinaryCards, selectedBinaryCard]);
+    //   setMatchedAlphaCards([...matchedAlphaCards, selectedAlphaCard]);
+    //   setMatchedBinaryCards([...matchedBinaryCards, selectedBinaryCard]);
     } else {
       console.log("Incorrect!");
     }
@@ -106,6 +107,7 @@ function MatchingAlpha() {
     <div>
       <Navbar />
       <div className="matching-alpha-container">
+
       <div className="letter-card-matching">
           {pairs.map(
             (pair, index) =>
@@ -132,8 +134,8 @@ function MatchingAlpha() {
         </div>
         <div className="braille-card-matching">
           {/* Rendering the binary cards */}
-          {pairs.map(
-            (pair, index) =>
+          {brailleImg.map(
+            (braille, index) =>
               !matchedBinaryCards.some(
                 (matchedCard) => matchedCard.id === pair.id
               ) && (
@@ -145,7 +147,7 @@ function MatchingAlpha() {
                   <Card
                     className="matching-height"
                     height="-webkit-fill-available"
-                    brailleimg={pair.braille_img}
+                    brailleimg={braille.braille_img}
                     matched={matchedBinaryCards.some(
                       (matchedCard) => matchedCard.id === pair.id
                     )}
