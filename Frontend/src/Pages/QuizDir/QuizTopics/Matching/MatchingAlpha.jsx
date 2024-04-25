@@ -6,6 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAlphabet } from "../../../../Services/characters.js";
 import "./Matching.css";
+import "../../../../Components/Card/Card.css"
 
 function MatchingAlpha() {
   const [pairs, setPairs] = useState([]);
@@ -14,25 +15,24 @@ function MatchingAlpha() {
   const [selectedAlphaCard, setSelectedAlphaCard] = useState(null);
   const [selectedBinaryCard, setSelectedBinaryCard] = useState(null);
 
-  //test for rendering
   const [matchedAlphaCards, setMatchedAlphaCards] = useState([]);
   const [matchedBinaryCards, setMatchedBinaryCards] = useState([]);
 
-  // const [matchedPairs, setMatchedPairs] = useState([]);
+  const [feedbackMessage, setFeedbackMessage] = useState("");
 
   useEffect(() => {
     // Fetch alphabet data
     getAlphabet().then((data) => {
       // Shuffle the alphabet data
       const shuffledAlphabet = shuffleArray(data);
-      console.log(shuffledAlphabet)
+      console.log(shuffledAlphabet);
       // Select 6 unique letters
       const uniqueLetters = selectUniqueAndShuffle(shuffledAlphabet, 6);
-      console.log(uniqueLetters)
+      console.log(uniqueLetters);
       setPairs(uniqueLetters);
       const shuffledBraille = selectUniqueAndShuffle(uniqueLetters, 6);
       setBrailleImg(shuffledBraille);
-      console.log(shuffledBraille)
+      console.log(shuffledBraille);
     });
   }, []);
 
@@ -74,119 +74,85 @@ function MatchingAlpha() {
 
   const handleBinaryCardClick = (index) => {
     const clickedCard = brailleImg[index];
-    console.log(index)
+    console.log(index);
     console.log(clickedCard);
     setSelectedBinaryCard(clickedCard);
   };
 
   const checkMatch = () => {
-    //Test for rendering
     if (selectedAlphaCard.id === selectedBinaryCard.id) {
       console.log("Correct!");
-    //   setMatchedAlphaCards([...matchedAlphaCards, selectedAlphaCard]);
-    //   setMatchedBinaryCards([...matchedBinaryCards, selectedBinaryCard]);
+      setFeedbackMessage("Correct!");
+      setMatchedAlphaCards([...matchedAlphaCards, selectedAlphaCard]);
+      setMatchedBinaryCards([...matchedBinaryCards, selectedBinaryCard]);
     } else {
       console.log("Incorrect!");
+      setFeedbackMessage("Try Again");
+
     }
     // Reset selected cards
     setSelectedAlphaCard(null);
     setSelectedBinaryCard(null);
-
-    // if (selectedAlphaCard.id === selectedBinaryCard.id) {
-    //     console.log('Correct!');
-    //     setMatchedPairs([...matchedPairs, selectedAlphaCard, selectedBinaryCard]);
-    // } else {
-    //     console.log('Incorrect!');
-    // }
-    // // Reset selected cards
-    // setSelectedAlphaCard(null);
-    // setSelectedBinaryCard(null);
   };
 
   return (
     <div>
       <Navbar />
-      <div className="matching-alpha-container">
-
-      <div className="letter-card-matching">
-          {pairs.map(
-            (pair, index) =>
-              !matchedAlphaCards.some(
-                (matchedCard) => matchedCard.id === pair.id
-              ) && (
-                <div
-                  key={index}
-                  className="matching-card"
-                  onClick={() => handleAlphaCardClick(index)}
-                >
-                  <Card
-                    className="matching-height"
-                    height="-webkit-fill-available"
-                    title={pair.english}
-                    refimg={pair.learning_img}
-                    matched={matchedAlphaCards.some(
-                      (matchedCard) => matchedCard.id === pair.id
-                    )}
-                  />
-                </div>
-              )
-          )}
+      <div className="page-container">
+        <div className="matching-title">
+            <h2 className="match-title">Alphabet</h2>
+            <h3 className="match-title">Match The Cards</h3>
         </div>
-        <div className="braille-card-matching">
-          {/* Rendering the binary cards */}
-          {brailleImg.map(
-            (braille, index) =>
-              !matchedBinaryCards.some(
-                (matchedCard) => matchedCard.id === pair.id
-              ) && (
-                <div
-                  key={index}
-                  className="matching-card"
-                  onClick={() => handleBinaryCardClick(index)}
-                >
-                  <Card
-                    className="matching-height"
-                    height="-webkit-fill-available"
-                    brailleimg={braille.braille_img}
-                    matched={matchedBinaryCards.some(
-                      (matchedCard) => matchedCard.id === pair.id
-                    )}
-                  />
-                </div>
-              )
-          )}
-        </div>
-
-
-
-        {/* <div className="letter-card-matching">
-            {pairs.map((pair, index) => (
-              <div key={index} className="matching-card" onClick={() => handleAlphaCardClick(index)}>
-                <Card
-                  className="matching-height"
-                  height="-webkit-fill-available" 
-                  title={pair.english}
-                  refimg={pair.learning_img}
-                  matched={matchedPairs.some(matchedPair => matchedPair.id === pair.id)}
-                />
-              </div>
-            ))}
+        {feedbackMessage && (
+  <div className={`feedback-message ${feedbackMessage === 'Correct!' ? 'correct-feedback' : 'incorrect-feedback'}`}>
+    {feedbackMessage}
+  </div>
+)}
+        <div className="matching-alpha-container">
+          <div className="letter-card-matching">
+            {pairs.map(
+              (pair, index) =>
+                !matchedAlphaCards.some(
+                  (matchedCard) => matchedCard.id === pair.id
+                ) && (
+                  <div
+                    key={index}
+                    className="matching-card"
+                    onClick={() => handleAlphaCardClick(index)}
+                  >
+                    <Card
+                      className="matching-height"
+                      height="-webkit-fill-available"
+                      title={pair.english}
+                      refimg={pair.learning_img}
+                    />
+                  </div>
+                )
+            )}
           </div>
           <div className="braille-card-matching">
-            {pairs.map((pair, index) => (
-              matchedPairs.some(matchedPair => matchedPair.id === pair.id) ? null :
-              <div key={index} className="matching-card" onClick={() => handleBinaryCardClick(index)}>
-                <Card 
-                  className="matching-height"
-                  height="-webkit-fill-available" 
-                  brailleimg={pair.braille_img} 
-                  matched={matchedPairs.some(matchedPair => matchedPair.id === pair.id)}
-                />
-              </div>
-            ))}
-      </div> */}
-    </div>
-      {/* <FooterSearch/> */}
+            {brailleImg.map(
+              (braille, index) =>
+                !matchedBinaryCards.some(
+                  (matchedCard) => matchedCard.id === braille.id
+                ) && (
+                  <div
+                    key={index}
+                    className="matching-card"
+                    onClick={() => handleBinaryCardClick(index)}
+                  >
+                    <Card
+                      className="matching-height"
+                      height="-webkit-fill-available"
+                      brailleimg={braille.braille_img}
+                    />
+                  </div>
+                )
+            )}
+          </div>
+        </div>
+      </div>
+      <FooterSearch />
     </div>
   );
 }
