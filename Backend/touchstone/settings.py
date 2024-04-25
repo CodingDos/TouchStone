@@ -89,8 +89,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'touchstone',
         'HOST': 'localhost',
-        # 'USER': 'touchstone_admin',
-        # 'PASSWORD' : 'password',
+        'USER': 'touchstone_admin',
+        'PASSWORD' : 'password',
     }
 }
 

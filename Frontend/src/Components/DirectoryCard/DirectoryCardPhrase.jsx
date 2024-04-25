@@ -15,8 +15,9 @@ function DirectoryCardPhrase(props) {
     }
     return double;
   }
-
+if(props.title){
   useEffect(() => {
+    if (!props.title) return; // Only proceed if title is non-null and non-undefined
     const phrase = props.title.toUpperCase();
     const searchPhrase = doubleIt(phrase);
     const searchArray = searchPhrase.match(/.{2}/g);
@@ -27,6 +28,11 @@ function DirectoryCardPhrase(props) {
     }
 	processWord(searchArray)
   }, [props.title]);
+}
+
+if (!props.title) {
+  return <div>Loading...</div>; // Render loading state or null if title isn't available
+}
 
 
   return (
