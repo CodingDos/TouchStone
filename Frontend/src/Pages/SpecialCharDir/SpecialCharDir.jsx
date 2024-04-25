@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -6,7 +5,7 @@ import Card from "../../Components/Card/Card.jsx";
 import { getPunctuation } from "../../Services/characters.js";
 import FooterSearch from "../../Components/FooterSearch/FooterSearch.jsx";
 
-import "./SpecialCharDir.css"
+import "./SpecialCharDir.css";
 
 function SpecialCharDir() {
   const [cards, setCards] = useState([]);
@@ -20,15 +19,18 @@ function SpecialCharDir() {
     getCards();
   }, []);
 
-console.log(cards)
+  console.log(cards);
 
   return (
     <div className="punctuationdir">
-      <Navbar/>
-      <h1 className="directory-title">Special Characters</h1>
+      <Navbar />
+      <h1 onClick={() => navigate("/home")} className="directory-title">
+        Special Characters
+      </h1>
       <div className="punctuation-container">
         {cards.map((card, idx) => (
           <div
+            key={idx}
             className="punctuation-card"
             onClick={() => navigate(`/specialchar/${card.binary}`)}
           >
@@ -41,11 +43,11 @@ console.log(cards)
             />
           </div>
         ))}
-      </div>  
+      </div>
 
-      <FooterSearch/>
+      <FooterSearch />
     </div>
-  )
+  );
 }
 
-export default SpecialCharDir
+export default SpecialCharDir;
