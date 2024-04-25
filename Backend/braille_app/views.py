@@ -91,6 +91,7 @@ class PhraseDetail(generics.RetrieveAPIView):
 
     def get_queryset(self):
         phrase = self.kwargs['phrase']
+        print (phrase)
         return Phrases.objects.filter(phrase=phrase)
 
     def get_object(self):

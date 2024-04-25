@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 import { useState } from "react";
 import { getAiResponse } from "../../Services/ai.js";
 import "./FooterSearch.css";
@@ -10,7 +10,7 @@ function FooterSearch() {
   const [answer, setAnswer] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
 
-  console.log("this is search", search)
+  console.log("this is search", search);
 
   function openModal() {
     setModalOpen(true);
@@ -24,25 +24,25 @@ function FooterSearch() {
     openModal();
     try {
       const options = {
-        input: search
+        input: search,
       };
-      console.log(options)
+      console.log(options);
       const response = await getAiResponse(options);
-      console.log(response)
+      console.log(response);
       setAnswer(response);
     } catch (error) {
       console.error(error);
     }
   };
 
-  console.log("this is answer" , answer)
+  console.log("this is answer", answer);
   return (
     <div className="footer">
       <Modal
-      className="search-result-modal"
-      isOpen={modalOpen}
-      onRequestClose={closeModal}
-      contentLabel="Example"
+        className="search-result-modal"
+        isOpen={modalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Example"
       >
         <div className="root-modal-close-btn">
           <button className='modal-close-btn' onClick={closeModal}><i className="fa fa-remove"></i></button>
@@ -51,13 +51,13 @@ function FooterSearch() {
           <div className="search-result">
             <p className="render-search-question">
               You Searched For:
-            {search} 
+              {search}
             </p>
           </div>
-          <div className="search-answer"> 
+          <div className="search-answer">
             <p className="render-search-answer">
-              Result: 
-            {answer.response}
+              Result:
+              {answer.response}
             </p>
           </div>
         </div>
