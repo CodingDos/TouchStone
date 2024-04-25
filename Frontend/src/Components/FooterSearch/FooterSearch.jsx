@@ -45,9 +45,7 @@ function FooterSearch() {
         contentLabel="Example"
       >
         <div className="root-modal-close-btn">
-          <button className="modal-close-btn" onClick={closeModal}>
-            <i className="fa fa-remove"></i>
-          </button>
+          <button className='modal-close-btn' onClick={closeModal}><i className="fa fa-remove"></i></button>
         </div>
         <div className="root-search-result">
           <div className="search-result">
