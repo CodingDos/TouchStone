@@ -50,6 +50,15 @@ function DevTeam() {
 
   const shuffledDevelopers = shuffle([...developers]);
 
+  // Function to determine if a name adjustment is needed
+  function getNameStyle(name) {
+    if (name.length > 14) {
+      // Assuming you want to adjust for names longer than 14 characters
+      return { fontSize: "20px" }; // Smaller font size for long names
+    }
+    return {}; // Return an empty object if no adjustment is needed
+  }
+
   return (
     <div>
       <Navbar />
@@ -84,6 +93,7 @@ function DevTeam() {
                   github={dev.github}
                   linkedIn={dev.linkedIn}
                   website={dev.website}
+                  nameStyle={getNameStyle(dev.name)}
                 />
               </div>
             ))}
