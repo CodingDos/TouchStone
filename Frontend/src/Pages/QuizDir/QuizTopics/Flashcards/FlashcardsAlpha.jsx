@@ -5,7 +5,6 @@ import { getCharacter } from "../../../../Services/characters.js";
 import Navbar from "../../../../Components/Navbar/Navbar";
 import Card from "../../../../Components/Card/Card.jsx";
 import FooterSearch from "../../../../Components/FooterSearch/FooterSearch.jsx";
-// import ReactFlipCard from "reactjs-flip-card";
 import ReactFlipCard from "reactjs-flip-card";
 
 function FlashcardsAlpha() {
