@@ -5,6 +5,8 @@ import { getCharacter } from "../../../../Services/characters.js";
 import Navbar from "../../../../Components/Navbar/Navbar";
 import Card from "../../../../Components/Card/Card.jsx";
 import FooterSearch from "../../../../Components/FooterSearch/FooterSearch.jsx";
+// import ReactFlipCard from "reactjs-flip-card";
+import ReactFlipCard from "reactjs-flip-card";
 
 function FlashcardsAlpha() {
   const navigate = useNavigate();
@@ -59,32 +61,41 @@ function FlashcardsAlpha() {
       <Navbar />
       <div className="flashcardsAlphabetContainer">
         <div className="flashcardsCaroselContainer">
-          <div onClick={handleFlip}>
-            <h1 onClick={() => navigate("/quiz/flashcards/")}>Alphabet</h1>
-
-            {!isFlipped ? (
-              <Card
-                className="alphacard"
-                width={"85%"}
-                height={"450px"}
-                title={currentCard.english}
-                refimg={currentCard.learning_img}
-              />
-            ) : (
-              <Card
-                className="alphacard"
-                width={"85%"}
-                height={"450px"}
-                brailleimg={currentCard.braille_img}
-              />
-            )}
+          <h1
+            className="directory-title flash-card-title"
+            onClick={() => navigate("/quiz/flashcards/")}
+          >
+            Alphabet
+          </h1>
+          <div className="flash-card-flip" onClick={handleFlip}>
+            <ReactFlipCard
+              flipTrigger="onClick"
+              frontComponent={
+                <Card
+                  titleStyle={{ fontSize: "50px", margin: "15px" }}
+                  imgStyle={{ width: "65px" }}
+                  width={"130%"}
+                  height={"200px"}
+                  title={currentCard.english}
+                  refimg={currentCard.learning_img}
+                />
+              }
+              backComponent={
+                <Card
+                  imgStyle={{ width: "100px" }}
+                  width={"130%"}
+                  height={"200px"}
+                  brailleimg={currentCard.braille_img}
+                />
+              }
+            />
           </div>
 
           <div className="alphabet-btns">
             <button onClick={onClickBack} className="alphabet-btns-back">
               <i className="fa fa-angle-left"></i>
             </button>
-            <p>Tap Card To Flip</p>
+            <p className="tap-to-flip">Tap Card To Flip</p>
             <button onClick={onClickForward} className="alphabet-btns-forward">
               <i className="fa fa-angle-right"></i>
             </button>
