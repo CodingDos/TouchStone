@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 import { getPhrase } from "../../../../Services/characters.js"
 import Navbar from '../../../../Components/Navbar/Navbar.jsx'
 import FooterSearch from '../../../../Components/FooterSearch/FooterSearch.jsx'
-// import Card from '../../../../Components/Card/Card.jsx'
 import DirectoryCardPhrase from '../../../../Components/DirectoryCard/DirectoryCardPhrase.jsx';
 
 
@@ -53,7 +52,8 @@ function Phrases() {
         {singlePhrase ? (
           <div className='dircard'>
           <DirectoryCardPhrase 
-          title={singlePhrase.phrase} 
+          title={singlePhrase.phrase}
+          img={singlePhrase.img}
           />
           </div>
         ) : (
