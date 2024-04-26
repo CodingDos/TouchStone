@@ -4,6 +4,7 @@ import { getPhrases, getCharacter } from "../../../../Services/characters.js";
 import Navbar from "../../../../Components/Navbar/Navbar";
 import Card from "../../../../Components/Card/Card.jsx";
 import FooterSearch from "../../../../Components/FooterSearch/FooterSearch.jsx";
+import ReactFlipCard from "reactjs-flip-card";
 
 function FlashcardsPhrases() {
   const navigate = useNavigate();
@@ -76,9 +77,15 @@ function FlashcardsPhrases() {
     <div>
       <Navbar />
       <div className="flashcardsAlphabetContainer" onClick={handleFlip}>
-        <h1 onClick={() => navigate("/quiz/flashcards/")}>Phrases</h1>
+        <div className="flashcardsCaroselContainer">
+          <h1
+            className="directory-title flash-card-title"
+            onClick={() => navigate("/quiz/flashcards/")}
+          >
+            Phrases
+          </h1>
 
-        {!isFlipped ? (
+          {/* {!isFlipped ? (
           <Card
             className="alphacard"
             width={"85%"}
@@ -96,16 +103,48 @@ function FlashcardsPhrases() {
               alt="Braille"
             />
           ))
-        )}
-      </div>
-      <div className="alphabet-btns">
-        <button className="alphabet-btns-back" onClick={onClickBack}>
-          <i className="fa fa-angle-left"></i>
-        </button>
-        <p>Tap Card To Flip</p>
-        <button className="alphabet-btns-forward" onClick={onClickForward}>
-          <i className="fa fa-angle-right"></i>
-        </button>
+        )} */}
+
+          <div className="flash-card-flip-phrases" onClick={handleFlip}>
+            <ReactFlipCard
+              flipTrigger="onClick"
+              frontComponent={
+                <Card
+                  titleStyle={{ fontSize: "60px", margin: "15px" }}
+                  imgStyle={{ width: "190px" }}
+                  width={"310%"}
+                  height={"327%"}
+                  title={currentCard.phrase}
+                  refimg={currentCard.img}
+                />
+              }
+              backComponent={
+                <div className="flash-phrases">
+                  <div className="flash-phrase-braille">
+                    {currentCard.brailleImages &&
+                      currentCard.brailleImages.map((imgSrc, index) => (
+                        <img
+                          key={index}
+                          className="dircard-braille-img"
+                          src={imgSrc}
+                          alt="Braille"
+                        />
+                      ))}
+                  </div>
+                </div>
+              }
+            />
+          </div>
+        </div>
+        <div className="alphabet-btns">
+          <button className="alphabet-btns-back" onClick={onClickBack}>
+            <i className="fa fa-angle-left"></i>
+          </button>
+          <p>Tap Card To Flip</p>
+          <button className="alphabet-btns-forward" onClick={onClickForward}>
+            <i className="fa fa-angle-right"></i>
+          </button>
+        </div>
       </div>
       <FooterSearch />
     </div>

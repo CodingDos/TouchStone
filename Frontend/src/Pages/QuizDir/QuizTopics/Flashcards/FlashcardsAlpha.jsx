@@ -71,19 +71,19 @@ function FlashcardsAlpha() {
               flipTrigger="onClick"
               frontComponent={
                 <Card
-                  titleStyle={{ fontSize: "50px", margin: "15px" }}
-                  imgStyle={{ width: "65px" }}
-                  width={"130%"}
-                  height={"200px"}
+                  titleStyle={{ fontSize: "80px", margin: "15px" }}
+                  imgStyle={{ width: "100px" }}
+                  width={"310%"}
+                  height={"327%"}
                   title={currentCard.english}
                   refimg={currentCard.learning_img}
                 />
               }
               backComponent={
                 <Card
-                  imgStyle={{ width: "100px" }}
-                  width={"130%"}
-                  height={"200px"}
+                  imgStyle={{ width: "200px" }}
+                  width={"310%"}
+                  height={"327%"}
                   brailleimg={currentCard.braille_img}
                 />
               }
