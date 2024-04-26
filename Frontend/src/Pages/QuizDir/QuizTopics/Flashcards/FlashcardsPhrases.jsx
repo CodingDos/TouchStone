@@ -125,7 +125,7 @@ function FlashcardsPhrases() {
                       currentCard.brailleImages.map((imgSrc, index) => (
                         <img
                           key={index}
-                          className="dircard-braille-img"
+                          className="dircard-braille-img phrases-braille-img"
                           src={imgSrc}
                           alt="Braille"
                         />

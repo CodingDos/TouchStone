@@ -72,7 +72,7 @@ function FlashcardsAlpha() {
               frontComponent={
                 <Card
                   titleStyle={{ fontSize: "80px", margin: "15px" }}
-                  imgStyle={{ width: "100px" }}
+                  imgStyle={{ width: "130px" }}
                   width={"310%"}
                   height={"327%"}
                   title={currentCard.english}
