@@ -50,6 +50,7 @@ function PhrasesDir() {
             <DirectoryCardPhrase 
             index={idx}
             title={phrase.phrase}
+            img={phrase.img}
             />
           </div>
         ))}
