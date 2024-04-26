@@ -9,15 +9,33 @@ function Flashcards() {
   return (
     <div>
       <Navbar />
-      <h1>Flashcards</h1>
-      <div onClick={() => navigate("/quiz/flashcards/alphabet/Aa")}>
-        <Card title="Alphabet" height="150px" />
-      </div>
-      <div onClick={() => navigate("/quiz/flashcards/numbers/0")}>
-        <Card title="Numbers" height="150px" />
-      </div>
-      <div onClick={() => navigate("/quiz/flashcards/phrases")}>
-        <Card title="Phrases" height="150px" />
+      <div className="quizDirectoryContainer">
+        <h1
+          onClick={() => navigate("/quiz")}
+          className="directory-title quiz-dir-title"
+        >
+          Flashcards
+        </h1>
+        <div className="quizDirectoryOptionsContainer">
+          <div
+            className="quiz-dir-options"
+            onClick={() => navigate("/quiz/flashcards/alphabet/Aa")}
+          >
+            <Card title="Alphabet" width={"120%"} height={"150px"} />
+          </div>
+          <div
+            className="quiz-dir-options"
+            onClick={() => navigate("/quiz/flashcards/numbers/0")}
+          >
+            <Card title="Numbers" width={"120%"} height={"150px"} />
+          </div>
+          <div
+            className="quiz-dir-options"
+            onClick={() => navigate("/quiz/flashcards/phrases")}
+          >
+            <Card title="Phrases" width={"120%"} height={"150px"} />
+          </div>
+        </div>
       </div>
       <FooterSearch />
     </div>
