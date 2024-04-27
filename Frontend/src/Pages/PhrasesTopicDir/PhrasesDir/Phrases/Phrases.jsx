@@ -53,7 +53,7 @@ function Phrases() {
       </div>
     );
   }
-  
+
   return (
     <div className='phrasesdir'>
       <Navbar />
@@ -68,8 +68,7 @@ function Phrases() {
         ) : (
           <div>No phrase data available.</div>
         )}
-        <button className="alphabet-btns-back" onClick={goBack}>
-          <i className="fa fa-angle-left"></i>
+        <button onClick={goBack}> Back
         </button>
       </div>
       <FooterSearch />
