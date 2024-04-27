@@ -23,7 +23,10 @@ function ComboDir() {
   return (
     <div className="combodir">
       <Navbar />
-      <h1 onClick={() => navigate("/home")} className="directory-title">
+      <h1
+        onClick={() => navigate("/home")}
+        className="directory-title alpha-title"
+      >
         Combos
       </h1>
       <div className="combo-container">
@@ -35,8 +38,9 @@ function ComboDir() {
           >
             <Card
               index={idx}
-              width={"30%"}
-              height={"30%"}
+              imgStyle={{ width: "80px" }}
+              width={"360px"}
+              height={"200px"}
               title={card.english}
               brailleimg={card.braille_img}
             />

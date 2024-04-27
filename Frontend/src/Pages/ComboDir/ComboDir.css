@@ -1,31 +1,30 @@
-.combodir{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.5rem;
-    padding-top: 100px;
-    padding-bottom: 55px;
+.combodir {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  padding-top: 100px;
+  padding-bottom: 55px;
 }
 
-.combo-container{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.5rem;
-
+.combo-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  justify-content: space-evenly;
+  gap: 1.5rem;
 }
 
-.combo-card{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.5rem;
+.combo-card {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
 }
-
-
