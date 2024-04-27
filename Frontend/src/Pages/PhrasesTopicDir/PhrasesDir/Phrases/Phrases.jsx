@@ -11,8 +11,11 @@ import DirectoryCardPhrase from '../../../../Components/DirectoryCard/DirectoryC
 function Phrases() {
 
   const { word } = useParams()
+  const navigate = useNavigate()
   const [ singlePhrase, setSinglePhrase ] = useState()
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
+  const [currentPhrase, setCurrentPhrase] = useState([])
+
 
 
   useEffect(() => {
@@ -34,7 +37,12 @@ function Phrases() {
   }, [word])
   
   
-  console.log("this is singlePhrase: ", singlePhrase)
+  function goBack() {
+    const pathArray = window.location.pathname.split('/')
+    pathArray.pop()
+    const newPath = pathArray.join('/')
+    navigate(newPath)
+  }
 
   if (isLoading) {
     return (
@@ -45,6 +53,7 @@ function Phrases() {
       </div>
     );
   }
+
   return (
     <div className='phrasesdir'>
       <Navbar />
@@ -59,6 +68,8 @@ function Phrases() {
         ) : (
           <div>No phrase data available.</div>
         )}
+        <button onClick={goBack}> Back
+        </button>
       </div>
       <FooterSearch />
     </div>
