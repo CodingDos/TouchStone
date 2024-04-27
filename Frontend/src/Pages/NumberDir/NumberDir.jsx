@@ -23,7 +23,10 @@ function NumberDir() {
   return (
     <div className="numberdir">
       <Navbar />
-      <h1 onClick={() => navigate("/home")} className="directory-title">
+      <h1
+        onClick={() => navigate("/home")}
+        className="directory-title  alpha-title"
+      >
         Number
       </h1>
       <div className="number-container">
@@ -35,8 +38,10 @@ function NumberDir() {
           >
             <Card
               index={idx}
-              width={"30%"}
-              height={"30%"}
+              titleStyle={{ fontSize: "50px" }}
+              imgStyle={{ width: "80px" }}
+              width={"360px"}
+              height={"200px"}
               title={card.english}
               brailleimg={card.braille_img}
             />
