@@ -19,12 +19,23 @@ function SpecialCharDir() {
     getCards();
   }, []);
 
+  // Function to determine if a character adjustment is needed
+  function getNameStyle(character) {
+    if (character.length > 5) {
+      return { fontSize: "20px" }; // Smaller font size for long names
+    }
+    return {}; // Return an empty object if no adjustment is needed
+  }
+
   console.log(cards);
 
   return (
     <div className="punctuationdir">
       <Navbar />
-      <h1 onClick={() => navigate("/home")} className="directory-title">
+      <h1
+        onClick={() => navigate("/home")}
+        className="directory-title alpha-title"
+      >
         Special Characters
       </h1>
       <div className="punctuation-container">
@@ -36,8 +47,10 @@ function SpecialCharDir() {
           >
             <Card
               index={idx}
-              width={"70%"}
-              height={"30%"}
+              titleStyle={getNameStyle(card.english)}
+              imgStyle={{ width: "80px" }}
+              width={"360px"}
+              height={"200px"}
               title={card.english}
               brailleimg={card.braille_img}
             />

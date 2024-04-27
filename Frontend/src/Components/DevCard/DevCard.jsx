@@ -3,7 +3,16 @@ import { GrGithub } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import "./DevCard.css";
 
-function DevCard({ name, img, role, specialty, github, linkedIn, website }) {
+function DevCard({
+  name,
+  img,
+  role,
+  specialty,
+  github,
+  linkedIn,
+  website,
+  nameStyle,
+}) {
   return (
     <div>
       <div
@@ -16,7 +25,9 @@ function DevCard({ name, img, role, specialty, github, linkedIn, website }) {
         <img className="dev-img" src={img} alt={name} />
         <h3 className="dev-roles">{role}</h3>
         <h3 className="dev-roles">{specialty}</h3>
-        <h2 className="dev-name">{name}</h2>
+        <h2 className="dev-name" style={nameStyle}>
+          {name}
+        </h2>
         {website && (
           <div className="dev-website-container">
             <p className="website">

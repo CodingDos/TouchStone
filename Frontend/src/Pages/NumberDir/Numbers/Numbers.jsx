@@ -57,17 +57,24 @@ function Numbers() {
     <div className="number">
       <Navbar />
       <div className="number-carosel">
-        <h1 className="directory-title">Number</h1>
+        <h1
+          onClick={() => navigate("/numberdir")}
+          className="directory-title alpha-title"
+        >
+          Number
+        </h1>
         <div className="carosel">
           <Card
+            titleStyle={{ fontSize: "80px", margin: "15px" }}
+            imgStyle={{ width: "130px" }}
             className="numcard"
-            width={"75%"}
-            height={"auto"}
+            width={"80%"}
+            height={"375px"}
             title={card.english}
             brailleimg={card.braille_img}
           />
         </div>
-        <div className="number-btns">
+        <div className="number-btns alpha-btn">
           <button onClick={onClickBack} className="number-btns-back">
             <i className="fa fa-angle-left"></i>
           </button>
@@ -76,7 +83,7 @@ function Numbers() {
           </button>
         </div>
       </div>
-      <FooterSearch/>
+      <FooterSearch />
     </div>
   );
 }

@@ -2,10 +2,14 @@
   height: 100vh;
 }
 
+.alpha-title {
+  padding-bottom: 10px;
+  color: #663d1f;
+}
+
 .alphabet-carosel {
   display: flex;
   flex-direction: column;
-  height: 95%;
   padding-top: 100px;
 }
 
@@ -24,19 +28,26 @@
   display: inline-block;
 }
 
-.alphabet-btns{
-    display: flex;
-    justify-content: space-evenly;
+.alpha-btn {
+  padding: 5px 0;
 }
 
-.alphabet-btns-back, .alphabet-btns-forward{
-    border: 2px solid transparent;
+.alphabet-btns {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.alphabet-btns-back:hover, .alphabet-btns-forward:hover{
-    border: 2px solid black;
+.alphabet-btns-back,
+.alphabet-btns-forward {
+  border: 2px solid transparent;
 }
 
-.fa-angle-left, .fa-angle-right{
-    font-size: 30px;
+.alphabet-btns-back:hover,
+.alphabet-btns-forward:hover {
+  border: 2px solid black;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  font-size: 30px;
 }
