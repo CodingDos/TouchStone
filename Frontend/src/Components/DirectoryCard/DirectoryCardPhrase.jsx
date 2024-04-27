@@ -40,6 +40,9 @@ if (!props.title) {
       <div className="dircard-examples">
         <div className="dircard-example1">
           <h3>{props.title}</h3>
+          <div className="dircard-ref-img">
+            {props.img ? <img src={props.img} alt="Descriptive text" /> : null}
+          </div>
 			{phrase?.map((card) => (
 				<img className="dircard-braille-img" src={card?.braille_img} />
 			))}

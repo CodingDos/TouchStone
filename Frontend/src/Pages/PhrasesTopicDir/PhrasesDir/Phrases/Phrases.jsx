@@ -5,15 +5,17 @@ import { useNavigate } from 'react-router-dom'
 import { getPhrase } from "../../../../Services/characters.js"
 import Navbar from '../../../../Components/Navbar/Navbar.jsx'
 import FooterSearch from '../../../../Components/FooterSearch/FooterSearch.jsx'
-// import Card from '../../../../Components/Card/Card.jsx'
 import DirectoryCardPhrase from '../../../../Components/DirectoryCard/DirectoryCardPhrase.jsx';
 
 
 function Phrases() {
 
   const { word } = useParams()
+  const navigate = useNavigate()
   const [ singlePhrase, setSinglePhrase ] = useState()
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
+  const [currentPhrase, setCurrentPhrase] = useState([])
+
 
 
   useEffect(() => {
@@ -35,7 +37,12 @@ function Phrases() {
   }, [word])
   
   
-  console.log("this is singlePhrase: ", singlePhrase)
+  function goBack() {
+    const pathArray = window.location.pathname.split('/')
+    pathArray.pop()
+    const newPath = pathArray.join('/')
+    navigate(newPath)
+  }
 
   if (isLoading) {
     return (
@@ -46,6 +53,7 @@ function Phrases() {
       </div>
     );
   }
+
   return (
     <div className='phrasesdir'>
       <Navbar />
@@ -53,12 +61,15 @@ function Phrases() {
         {singlePhrase ? (
           <div className='dircard'>
           <DirectoryCardPhrase 
-          title={singlePhrase.phrase} 
+          title={singlePhrase.phrase}
+          img={singlePhrase.img}
           />
           </div>
         ) : (
           <div>No phrase data available.</div>
         )}
+        <button onClick={goBack}> Back
+        </button>
       </div>
       <FooterSearch />
     </div>
