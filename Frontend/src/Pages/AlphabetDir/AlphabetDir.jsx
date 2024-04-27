@@ -21,9 +21,13 @@ function AlphabetDir() {
   return (
     <div className="alphabetdir">
       <Navbar />
-      <h1 onClick={() => navigate("/home")} className="directory-title">
+      <h1
+        onClick={() => navigate("/home")}
+        className="directory-title alpha-title"
+      >
         Alphabet
       </h1>
+      {/* <div className="boo"> */}
       <div className="alphabet-container">
         {cards.map((card, idx) => (
           <div
@@ -33,8 +37,8 @@ function AlphabetDir() {
           >
             <Card
               index={idx}
-              width={"30%"}
-              height={"30%"}
+              width={"360px"}
+              height={"auto"}
               title={card.english}
               brailleimg={card.braille_img}
               refimg={card.learning_img}
@@ -42,6 +46,7 @@ function AlphabetDir() {
           </div>
         ))}
       </div>
+      {/* </div> */}
       <FooterSearch />
     </div>
   );

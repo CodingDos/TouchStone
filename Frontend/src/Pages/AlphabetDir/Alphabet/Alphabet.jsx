@@ -7,12 +7,12 @@ import "./Alphabet.css";
 import FooterSearch from "../../../Components/FooterSearch/FooterSearch.jsx";
 
 function Alphabet() {
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState([]);
   const [card, setCard] = useState([]);
-  const {id: cardId} = useParams()
+  const { id: cardId } = useParams();
 
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   useEffect(() => {
     const getCard = async () => {
       const test = await getCharacter(cardId);
@@ -29,40 +29,47 @@ function Alphabet() {
     getCards();
   }, []);
 
-  const onClickBack = async() => {
-    const currentidx = cards.findIndex(item => item.english ===cardId)
-    const previousidx = currentidx - 1
-    if(previousidx === -1 ){
-      navigate(`/alphabet/${cards[cards.length-1].english}`)
-    }else{
-    navigate(`/alphabet/${cards[previousidx].english}`)
-  }}
+  const onClickBack = async () => {
+    const currentidx = cards.findIndex((item) => item.english === cardId);
+    const previousidx = currentidx - 1;
+    if (previousidx === -1) {
+      navigate(`/alphabet/${cards[cards.length - 1].english}`);
+    } else {
+      navigate(`/alphabet/${cards[previousidx].english}`);
+    }
+  };
 
-  const onClickForward = async() => {
-    const currentidx = cards.findIndex(item => item.english ===cardId)
-    const nextidx = currentidx + 1
-    if(nextidx === 26 ){
-      navigate(`/alphabet/${cards[0].english}`)
-    }else{
-    navigate(`/alphabet/${cards[nextidx].english}`)
-  }}
+  const onClickForward = async () => {
+    const currentidx = cards.findIndex((item) => item.english === cardId);
+    const nextidx = currentidx + 1;
+    if (nextidx === 26) {
+      navigate(`/alphabet/${cards[0].english}`);
+    } else {
+      navigate(`/alphabet/${cards[nextidx].english}`);
+    }
+  };
 
   return (
     <div className="alphabet">
       <Navbar />
       <div className="alphabet-carosel">
-        <h1 className="directory-title">Alphabet</h1>
+        <h1
+          onClick={() => navigate("/alphabetdir")}
+          className="directory-title alpha-title"
+        >
+          Alphabet
+        </h1>
         <div className="carosel">
           <Card
             className="alphacard"
-            width={"60%"}
-            height={"auto"}
+            width={"80%"}
+            height={"375px"}
             title={card.english}
             brailleimg={card.braille_img}
             refimg={card.learning_img}
           />
         </div>
-        <div className="alphabet-btns">
+        <div className="alphabet-btns alpha-btn">
           <button onClick={onClickBack} className="alphabet-btns-back">
             <i className="fa fa-angle-left"></i>
           </button>
