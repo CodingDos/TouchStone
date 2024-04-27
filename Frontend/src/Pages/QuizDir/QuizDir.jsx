@@ -13,7 +13,7 @@ function QuizDir() {
       <div className="quizDirectoryContainer">
         <h1
           onClick={() => navigate("/home")}
-          className="directory-title quiz-dir-title"
+          className="directory-title quiz-dir-title alpha-title"
         >
           Quiz
         </h1>

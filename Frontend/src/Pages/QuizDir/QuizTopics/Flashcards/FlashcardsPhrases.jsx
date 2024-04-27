@@ -79,7 +79,7 @@ function FlashcardsPhrases() {
       <div className="flashcardsAlphabetContainer" onClick={handleFlip}>
         <div className="flashcardsCaroselContainer">
           <h1
-            className="directory-title flash-card-title"
+            className="directory-title flash-card-title alpha-title"
             onClick={() => navigate("/quiz/flashcards/")}
           >
             Phrases

@@ -12,28 +12,28 @@ function Flashcards() {
       <div className="quizDirectoryContainer">
         <h1
           onClick={() => navigate("/quiz")}
-          className="directory-title quiz-dir-title"
+          className="directory-title quiz-dir-title alpha-title"
         >
           Flashcards
         </h1>
         <div className="quizDirectoryOptionsContainer">
           <div
-            className="quiz-dir-options"
+            className="quiz-options"
             onClick={() => navigate("/quiz/flashcards/alphabet/Aa")}
           >
-            <Card title="Alphabet" width={"120%"} height={"150px"} />
+            <Card title="Alphabet" width={"140%"} height={"150px"} />
           </div>
           <div
-            className="quiz-dir-options"
+            className="quiz-options"
             onClick={() => navigate("/quiz/flashcards/numbers/0")}
           >
-            <Card title="Numbers" width={"120%"} height={"150px"} />
+            <Card title="Numbers" width={"140%"} height={"150px"} />
           </div>
           <div
-            className="quiz-dir-options"
+            className="quiz-options"
             onClick={() => navigate("/quiz/flashcards/phrases")}
           >
-            <Card title="Phrases" width={"120%"} height={"150px"} />
+            <Card title="Phrases" width={"140%"} height={"150px"} />
           </div>
         </div>
       </div>

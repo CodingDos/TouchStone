@@ -21,28 +21,28 @@ function QuizTopics() {
         </h1>
         <div className="quizDirectoryOptionsContainer">
           <div
-            className="quiz-dir-options"
+            className="quiz-options"
             onClick={() =>
               navigate(`/quiz/${state.quiz}`, { state: { search: "abc" } })
             }
           >
-            <Card title="Alphabet" width={"120%"} height={"150px"} />
+            <Card title="Alphabet" width={"140%"} height={"150px"} />
           </div>
           <div
-            className="quiz-dir-options"
+            className="quiz-options"
             onClick={() =>
               navigate(`/quiz/${state.quiz}`, { state: { search: "123" } })
             }
           >
-            <Card title="Numbers" width={"120%"} height={"150px"} />
+            <Card title="Numbers" width={"140%"} height={"150px"} />
           </div>
           <div
-            className="quiz-dir-options"
+            className="quiz-options"
             onClick={() =>
               navigate(`/quiz/${state.quiz}`, { state: { search: "phrases" } })
             }
           >
-            <Card title="Phrases" width={"120%"} height={"150px"} />
+            <Card title="Phrases" width={"140%"} height={"150px"} />
           </div>
         </div>
       </div>
