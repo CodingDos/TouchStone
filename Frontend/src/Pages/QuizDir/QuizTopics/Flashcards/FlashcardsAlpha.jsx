@@ -61,7 +61,7 @@ function FlashcardsAlpha() {
       <div className="flashcardsAlphabetContainer">
         <div className="flashcardsCaroselContainer">
           <h1
-            className="directory-title flash-card-title alpha-title"
+            className="directory-title flash-card-title "
             onClick={() => navigate("/quiz/flashcards/")}
           >
             Alphabet
@@ -72,7 +72,7 @@ function FlashcardsAlpha() {
               frontComponent={
                 <Card
                   titleStyle={{ fontSize: "80px", margin: "15px" }}
-                  imgStyle={{ width: "130px" }}
+                  imgStyle={{ width: "130px", height: "200px" }}
                   width={"310%"}
                   height={"327%"}
                   title={currentCard.english}
