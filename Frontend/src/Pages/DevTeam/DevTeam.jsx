@@ -1,6 +1,6 @@
 import "./DevTeam.css";
 import DevCard from "../../Components/DevCard/DevCard";
-import developers from "../../Components/DevCard/devInfo.js";
+import developers from "../../Services/devInfo.js";
 import Slider from "react-slick";
 import Navbar from "../../Components/Navbar/Navbar";
 import FooterSearch from "../../Components/FooterSearch/FooterSearch";
