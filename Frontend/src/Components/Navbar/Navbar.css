@@ -2,34 +2,33 @@
   width: 100vw;
   height: 5rem;
   display: flex;
+  z-index: 2;
   flex-direction: row;
   justify-content: left;
   align-items: center;
   background-color: #808c6c;
-  position:fixed;
-  top: 0
+  position: fixed;
+  top: 0;
 }
 
-.navbar-title{
-    padding-left: 20px;
-    font-size: 25px;
-    color: #373a47;
+.navbar-title {
+  padding-left: 20px;
+  font-size: 25px;
+  color: #373a47;
 }
 
-.burgermenu{
-    display: flex;
-    justify-content: right;
-    width: 100%;
-    height: 20px;
-    z-index: 30;
+.burgermenu {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  height: 20px;
+  z-index: 30;
 }
 
-.burgermenu-link{
-    color: black
-  } 
+.burgermenu-link {
+  color: black;
+}
 
-
-  
 /* below is burger menu styling */
 
 .bm-item {
@@ -70,20 +69,19 @@
 /* Color/shape of close button cross */
 .bm-cross {
   background: #373a47;
-
 }
 
 /* General sidebar styles */
 .bm-menu {
-  background: #C7CFBB;
+  background: #c7cfbb;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
 .bm-menu-wrap {
-    position: fixed;
-    height: 100%;
-  }
+  position: fixed;
+  height: 100%;
+}
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
