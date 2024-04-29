@@ -61,4 +61,8 @@
     color: #a94442;
     border: 1px solid #ebccd1;
   }
+
+  .phrase-container h3 {
+    display: none;
+  }
   
