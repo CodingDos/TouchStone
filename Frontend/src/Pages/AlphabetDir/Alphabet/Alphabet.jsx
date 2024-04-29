@@ -61,9 +61,11 @@ function Alphabet() {
         </h1>
         <div className="carosel">
           <Card
+            titleStyle={{ fontSize: "60px" }}
+            imgStyle={{ height: "140px", width: "100px", margin: "0px" }}
             className="alphacard"
             width={"80%"}
-            height={"375px"}
+            height={"370px"}
             title={card.english}
             brailleimg={card.braille_img}
             refimg={card.learning_img}

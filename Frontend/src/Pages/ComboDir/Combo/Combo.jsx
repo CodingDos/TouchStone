@@ -64,7 +64,7 @@ function Combo() {
             titleStyle={{ fontSize: "80px" }}
             className="combocard"
             width={"80%"}
-            height={"375px"}
+            height={"370px"}
             title={card.english}
             brailleimg={card.braille_img}
           />

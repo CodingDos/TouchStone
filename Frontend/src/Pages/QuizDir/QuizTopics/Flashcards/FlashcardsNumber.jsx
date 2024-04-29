@@ -63,7 +63,7 @@ function FlashcardsNumber() {
       <div className="flashcardsAlphabetContainer">
         <div className="flashcardsCaroselContainer">
           <h1
-            className="directory-title flash-card-title alpha-title"
+            className="directory-title flash-card-title"
             onClick={() => navigate("/quiz/flashcards/")}
           >
             Numbers

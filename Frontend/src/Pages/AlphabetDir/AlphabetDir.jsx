@@ -36,9 +36,10 @@ function AlphabetDir() {
             onClick={() => navigate(`/alphabet/${card.english}`)}
           >
             <Card
+              imgStyle={{ height: "80px", width: "65px", margin: "0px" }}
               index={idx}
               width={"360px"}
-              height={"auto"}
+              height={"230px"}
               title={card.english}
               brailleimg={card.braille_img}
               refimg={card.learning_img}

@@ -61,7 +61,7 @@ function Numbers() {
           onClick={() => navigate("/numberdir")}
           className="directory-title alpha-title"
         >
-          Number
+          Numbers
         </h1>
         <div className="carosel">
           <Card
@@ -69,7 +69,7 @@ function Numbers() {
             imgStyle={{ width: "130px" }}
             className="numcard"
             width={"80%"}
-            height={"375px"}
+            height={"370px"}
             title={card.english}
             brailleimg={card.braille_img}
           />

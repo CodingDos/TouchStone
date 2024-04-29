@@ -27,7 +27,7 @@ function NumberDir() {
         onClick={() => navigate("/home")}
         className="directory-title  alpha-title"
       >
-        Number
+        Numbers
       </h1>
       <div className="number-container">
         {cards.map((card, idx) => (

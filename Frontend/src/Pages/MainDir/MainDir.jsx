@@ -17,6 +17,9 @@ function MainDir() {
       <Navbar />
       <div onClick={() => navigate("/alphabetdir")}>
         <DirectoryCard
+          titleStyle={{ fontSize: "40px", margin: "0px" }}
+          imgStyle={{ height: "80px", margin: "0px" }}
+          dirTitle={{ fontSize: "20px", margin: "10px" }}
           example1="Aa"
           example2="Bb"
           example3="Cc"
@@ -24,14 +27,22 @@ function MainDir() {
         />
       </div>
       <div onClick={() => navigate("/numberdir")}>
-        <DirectoryCard 
-        example1="1" 
-        example2="2" 
-        example3="3" 
-        title="Numbers" />
+        <DirectoryCard
+          titleStyle={{ fontSize: "40px", margin: "0px" }}
+          imgStyle={{ height: "80px", margin: "0px" }}
+          dirTitle={{ fontSize: "20px", margin: "10px" }}
+          example1="Aa"
+          example1="1"
+          example2="2"
+          example3="3"
+          title="Numbers"
+        />
       </div>
       <div onClick={() => navigate("/specialchardir")}>
         <DirectoryCard
+          titleStyle={{ fontSize: "25px", margin: "10px" }}
+          imgStyle={{ height: "80px", margin: "0px" }}
+          dirTitle={{ fontSize: "20px", margin: "10px" }}
           example1="Space"
           example2="!"
           example3="Letter"
@@ -40,6 +51,9 @@ function MainDir() {
       </div>
       <div onClick={() => navigate("/combodir")}>
         <DirectoryCard
+          titleStyle={{ fontSize: "40px", margin: "10px" }}
+          imgStyle={{ height: "80px", margin: "0px" }}
+          dirTitle={{ fontSize: "20px", margin: "10px" }}
           example1="ER"
           example2="CH"
           example3="ST"
@@ -48,12 +62,18 @@ function MainDir() {
       </div>
       <div className="dircard" onClick={() => navigate("/phrases")}>
         <DirectoryCardPhrase
-        title="Hello"
-        category="Common Phrases"
+          titleStyle={{ fontSize: "25px", margin: "10px" }}
+          imgStyle={{ height: "80px", margin: "0px" }}
+          dirTitle={{ fontSize: "20px", margin: "10px" }}
+          title="Hello"
+          category="Common Phrases"
         />
       </div>
       <div onClick={() => navigate("/quiz")}>
-        <DirectoryCardQuiz/>
+        <DirectoryCardQuiz
+          imgStyle={{ height: "80px", margin: "0px" }}
+          dirTitle={{ fontSize: "20px", margin: "0 0 10px 0" }}
+        />
       </div>
       <FooterSearch />
     </div>
