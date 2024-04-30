@@ -10,6 +10,7 @@ function Card({
   brailleimg,
   titleStyle,
   imgStyle,
+  brailleStyle,
 }) {
   return (
     <div
@@ -23,7 +24,7 @@ function Card({
         {title}
       </h3>
       <img className="card-ref-img" src={refimg} style={imgStyle} />
-      <img className="card-braille-img" src={brailleimg} style={imgStyle} />
+      <img className="card-braille-img" src={brailleimg} style={brailleStyle} />
     </div>
   );
 }

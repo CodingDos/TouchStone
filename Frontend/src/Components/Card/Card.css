@@ -13,9 +13,9 @@
   gap: 5px;
 }
 
-/* .card:hover {
-  border: 8cap solid #663d1f;
-} */
+.card:hover {
+  border: 8px solid #663d1f;
+}
 
 .card-ref-img {
   width: 40%;

@@ -9,6 +9,12 @@
   padding-top: 100px;
 }
 
+.fillin-container {
+  display: flex;
+  justify-content: center;
+  height: 350px;
+}
+
 .carosel {
   height: 50%;
   display: flex;
@@ -21,24 +27,28 @@
 }
 
 .message {
-	color:#030303; 
+  color: #030303;
+  margin: 0;
 }
 
-.btns{
-    display: flex;
-    justify-content: space-evenly;
+.btns {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.btns-back, .btns-forward{
-    border: 2px solid transparent;
+.btns-back,
+.btns-forward {
+  border: 2px solid transparent;
 }
 
-.btns-back:hover, .btns-forward:hover{
-    border: 2px solid black;
+.btns-back:hover,
+.btns-forward:hover {
+  border: 2px solid black;
 }
 
-.fa-angle-left, .fa-angle-right{
-    font-size: 30px;
+.fa-angle-left,
+.fa-angle-right {
+  font-size: 30px;
 }
 /* .card{
     display: flex;
@@ -47,34 +57,34 @@
     border: 2px solid black;
     border-radius: 1rem; */
 
-    /* height: 30%;
+/* height: 30%;
     width: 30%; */
-    /* background-color: white;
+/* background-color: white;
     padding: 15px;
     gap: 5px;
 } */
 
-.card-title{
-    font-size: 40px;
-    margin: 0;
-    color: black;
+.card-title {
+  font-size: 40px;
+  margin: 0;
+  color: black;
 }
 
-.braille_fillin{
-	display: flex;
-	flex-direction: row;
+.braille_fillin {
+  display: flex;
+  flex-direction: row;
 }
 
-#column1{
-	display: flex;
-	flex-direction: column;
-	float: left;
+#column1 {
+  display: flex;
+  flex-direction: column;
+  float: left;
 }
 
-#column2{
-	display:flex;
-	flex-direction: column;
-	float: right;
+#column2 {
+  display: flex;
+  flex-direction: column;
+  float: right;
 }
 
 input[type="checkbox"] {
@@ -87,15 +97,15 @@ input[type="checkbox"] {
   border-radius: 50%;
 }
 
-
 input[type="checkbox"]::before {
+  position: relative;
   content: "";
   width: 2rem;
   height: 2rem;
   clip-path: circle(50% at 50% 50%);
   transform: scale(0);
   background-color: black;
-  z-index: 10;
+  z-index: 1;
 }
 
 input[type="checkbox"]:checked::before {
