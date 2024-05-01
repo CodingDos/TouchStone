@@ -88,7 +88,7 @@ function Phrases() {
             <DirectoryCardPhrase
               width={"80%"}
               height={"340px"}
-              titleStyle={{ fontSize: "60px" }}
+              titleStyle={{ fontSize: "60px", marginBottom: "0" }}
               imgStyle={{ height: "120px", width: "100px", margin: "0px" }}
               title={currentPhrase.phrase}
               img={currentPhrase.img}
