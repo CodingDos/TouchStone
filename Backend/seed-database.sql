@@ -140,7 +140,7 @@ INSERT INTO braille_app_phrases (phrase, category, img)
 	('September', 'Tim', 'https://i.imgur.com/L41EI52.png'),
 	('October', 'Tim', 'https://i.imgur.com/pNqoD7Q.png'),
 	('November', 'Tim', 'https://i.imgur.com/AV5P3bp.png'),
-	('Decemeber', 'Tim', 'https://i.imgur.com/AcwtMal.png'),
+	('December', 'Tim', 'https://i.imgur.com/AcwtMal.png'),
 	('Spring', 'Tim', 'https://i.imgur.com/hSxywdg.png'),
 	('Summer', 'Tim', 'https://i.imgur.com/cbkAHjv.png'),
 	('Autumn', 'Tim', 'https://i.imgur.com/1FnEkJT.png'),

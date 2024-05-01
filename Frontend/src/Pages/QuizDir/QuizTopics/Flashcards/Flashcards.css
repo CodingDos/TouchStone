@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* margin-right: 7px; */
 }
 
 .flip-card {
@@ -51,7 +52,7 @@
 
 .flash-card-flip {
   display: flex;
-  margin: 0 0 290px -240px;
+  margin: 0 0 290px -245px;
 }
 
 .tap-to-flip {
@@ -66,7 +67,7 @@
 
 .flash-card-flip-phrases {
   display: flex;
-  margin: 0 0 290px -240px;
+  margin: 0 0 290px -245px;
 }
 
 .flash-phrases {
@@ -86,7 +87,7 @@
 .flash-phrase-braille {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .phrases-braille-img {

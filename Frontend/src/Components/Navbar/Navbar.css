@@ -14,7 +14,7 @@
 .navbar-title {
   padding-left: 20px;
   font-size: 25px;
-  color: #373a47;
+  color: #E8E7DD;
 }
 
 .burgermenu {
@@ -57,7 +57,7 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: #E8E7DD;
 }
 
 /* Position and sizing of clickable cross button */
