@@ -34,12 +34,13 @@
 }
 
 .a-tag {
-  padding: 5px 10px; /* Reduces padding and applies it evenly */
-  overflow: hidden; /* Prevents the content from spilling out */
-  text-overflow: ellipsis; /* Adds an ellipsis if the text overflows */
-  max-width: 70%; /* Limits the width of the anchor tag */
+  height: 35px;
+  width: 35px;
 }
 .dev-links {
   color: black;
   margin: 0 5px;
+}
+.root-dev-links {
+  display: flex;
 }
