@@ -37,17 +37,6 @@ function DevCard({
             <Link className="dev-links" to={website} target="_blank">
               <img className="a-tag" src="https://i.imgur.com/FAnrjyh.png"/>
             </Link>
-
-          // <div className="dev-links">
-          //   <p className="website">
-          //     <img
-          //       className="a-tag"
-          //       src="https://i.imgur.com/FAnrjyh.png"
-          //       // href={website}
-          //     />
-          //       {/* {website} */}
-          //   </p>
-          // </div>
          )}
           {github && (
             <Link className="dev-links" to={github} target="_blank">
