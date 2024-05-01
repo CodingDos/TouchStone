@@ -22,13 +22,7 @@ export const getSpecificCharacter = async (info, category) => {
 
 export const getCharacter = async (info) => {
 	try {
-<<<<<<< Updated upstream
 		const resp = await api.get(`/braille/${info}/`);
-=======
-		console.log(info)
-		const resp = await api.get(`/braille/${info}/`);
-
->>>>>>> Stashed changes
 		return resp.data;
 	} catch (error) {
 		throw error;
