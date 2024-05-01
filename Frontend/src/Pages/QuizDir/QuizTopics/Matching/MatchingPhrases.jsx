@@ -118,15 +118,12 @@ function MatchingPhrases() {
             {feedbackMessage}
           </div>
         )}
-<<<<<<< Updated upstream
-=======
         {matchedPhCards.length === 2 && (
           <>
             <button onClick={() => window.location.reload()}>Continue</button>
             <button onClick={() => window.history.back()}>Back</button>
           </>
         )}
->>>>>>> Stashed changes
         <div
           className="matching-alpha-container"
           style={{ flexDirection: "column", alignItems: "center" }}
@@ -181,16 +178,6 @@ function MatchingPhrases() {
                         />
                       </div>
                     </div>
-<<<<<<< Updated upstream
-                    {/* <DirectoryCardPhrase
-                      // className="matching-height"
-                      // height="-webkit-fill-available"
-                      // brailleimg={braille.braille_img}
-                      title={braille.phrase} 
-
-                    /> */}
-=======
->>>>>>> Stashed changes
                   </div>
                 )
             )}
