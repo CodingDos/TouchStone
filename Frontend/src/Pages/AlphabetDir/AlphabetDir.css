@@ -11,8 +11,8 @@
 
 .alphabet-container {
   height: 100%;
+  width: 100%;
   display: flex;
-  margin-left: -10px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
