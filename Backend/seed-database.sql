@@ -123,7 +123,6 @@ INSERT INTO braille_app_phrases (phrase, category, img)
 	('Afternoon', 'Tim', 'https://i.imgur.com/gW2kePV.png'),
 	('Evening', 'Tim', 'https://i.imgur.com/Gk3rHx5.png'),
 	('Night', 'Tim', 'https://i.imgur.com/Yh0sPAg.png'),
-	('Second Breakfast', 'Tim', 'https://i.imgur.com/aZg68gu.png'),
 	('Hour', 'Tim', 'https://i.imgur.com/qYZ2N9I.png'),
 	('Minute', 'Tim', 'https://i.imgur.com/Fm6wq9D.png'),
 	('Second', 'Tim', 'https://i.imgur.com/1laG5FP.png'),
