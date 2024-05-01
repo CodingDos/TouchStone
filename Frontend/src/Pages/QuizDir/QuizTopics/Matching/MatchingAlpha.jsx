@@ -6,7 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAlphabet } from "../../../../Services/characters.js";
 import "./Matching.css";
-import "../../../../Components/Card/Card.css"
+import "../../../../Components/Card/Card.css";
 
 function MatchingAlpha() {
   const navigate = useNavigate();
@@ -90,7 +90,6 @@ function MatchingAlpha() {
     } else {
       console.log("Incorrect!");
       setFeedbackMessage("Try Again");
-
     }
     // Reset selected cards
     setSelectedAlphaCard(null);
@@ -102,21 +101,37 @@ function MatchingAlpha() {
       <Navbar />
       <div className="page-container">
         <div className="matching-title">
-            <h2 className="match-title" onClick={() => navigate("/quiz/matching/")}>Alphabet</h2>
-            <h3 className="match-title">Match The Cards</h3>
+          <h2
+            className="match-title"
+            onClick={() => navigate("/quiz/matching/")}
+          >
+            Alphabet
+          </h2>
+          <h3 className="match-title">Match The Cards</h3>
         </div>
 
         {matchedAlphaCards.length !== 6 && feedbackMessage && (
-  <div className={`feedback-message ${feedbackMessage === 'Correct!' ? 'correct-feedback' : 'incorrect-feedback'}`}>
-    {feedbackMessage}
-  </div>
-)}
-{matchedAlphaCards.length === 6 && (
-  <>
-  <h3 className="quiz-complete">Great Work!</h3>
-  <button className="refresh-button" onClick={() => window.location.reload()}>Refresh</button>
-  </>
-)}
+          <div
+            className={`feedback-message ${
+              feedbackMessage === "Correct!"
+                ? "correct-feedback"
+                : "incorrect-feedback"
+            }`}
+          >
+            {feedbackMessage}
+          </div>
+        )}
+        {matchedAlphaCards.length === 6 && (
+          <>
+            <h3 className="quiz-complete">Great Work!</h3>
+            <button
+              className="refresh-button"
+              onClick={() => window.location.reload()}
+            >
+              Refresh
+            </button>
+          </>
+        )}
         <div className="matching-alpha-container">
           <div className="letter-card-matching">
             {pairs.map(
@@ -130,6 +145,7 @@ function MatchingAlpha() {
                     onClick={() => handleAlphaCardClick(index)}
                   >
                     <Card
+                      imgStyle={{ height: "77px", width: "53px" }}
                       className="matching-height"
                       height="-webkit-fill-available"
                       title={pair.english}
