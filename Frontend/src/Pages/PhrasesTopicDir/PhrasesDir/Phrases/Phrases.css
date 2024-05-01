@@ -1,3 +1,7 @@
 .dircard-example1 {
-    align-content: space-around;
+  align-content: space-around;
+}
+
+.phrases-left-btn {
+  margin-right: 100px;
 }

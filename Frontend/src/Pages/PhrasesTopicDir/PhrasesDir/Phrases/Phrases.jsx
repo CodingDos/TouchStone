@@ -2,41 +2,69 @@ import React, { useEffect, useState } from "react";
 import "./Phrases.css";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { getPhrase } from "../../../../Services/characters.js";
+import {
+  getSignPhrases,
+  getTimePhrases,
+  getDirectionPhrases,
+} from "../../../../Services/characters.js";
 import Navbar from "../../../../Components/Navbar/Navbar.jsx";
 import FooterSearch from "../../../../Components/FooterSearch/FooterSearch.jsx";
 import DirectoryCardPhrase from "../../../../Components/DirectoryCard/DirectoryCardPhrase.jsx";
 
 function Phrases() {
-  const { word } = useParams();
-  const navigate = useNavigate();
-  const [singlePhrase, setSinglePhrase] = useState();
+  const [phrases, setPhrases] = useState([]);
+  const { topic, word } = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  const [currentPhrase, setCurrentPhrase] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const getSinlgePhrase = async () => {
+    const fetchPhrases = async () => {
       try {
         setIsLoading(true);
-        const info = await getPhrase(word);
-        setSinglePhrase(info);
+        let allPhrases;
+        switch (topic) {
+          case "Sgn":
+            allPhrases = await getSignPhrases();
+            break;
+          case "Tim":
+            allPhrases = await getTimePhrases();
+            break;
+          case "Dir":
+            allPhrases = await getDirectionPhrases();
+            break;
+          default:
+            allPhrases = []; // Handle unexpected topic gracefully
+        }
+        setPhrases(allPhrases);
       } catch (error) {
-        console.error(error);
+        console.error("Error fetching phrases:", error);
       } finally {
         setIsLoading(false);
       }
     };
-    if (word) {
-      getSinlgePhrase();
-    }
-  }, [word]);
 
-  function goBack() {
-    const pathArray = window.location.pathname.split("/");
-    pathArray.pop();
-    const newPath = pathArray.join("/");
-    navigate(newPath);
-  }
+    fetchPhrases();
+  }, [topic]); // Re-fetch phrases when the topic changes
+
+  const currentIdx = phrases.findIndex((p) => p.phrase === word);
+
+  const navigateToPhrase = (index) => {
+    const phrase = phrases[index];
+    navigate(`/phrases/${topic}/${phrase.phrase}`);
+  };
+
+  const onClickBack = () => {
+    const previousIdx = currentIdx > 0 ? currentIdx - 1 : phrases.length - 1;
+    navigateToPhrase(previousIdx);
+  };
+
+  const onClickForward = () => {
+    const nextIdx = currentIdx < phrases.length - 1 ? currentIdx + 1 : 0;
+    navigateToPhrase(nextIdx);
+  };
+
+  const currentPhrase = phrases[currentIdx] || {}; // Default to an empty object if no phrase is found
 
   if (isLoading) {
     return (
@@ -55,25 +83,31 @@ function Phrases() {
         <h1 onClick={() => navigate("/phrases")} className="directory-title">
           Phrases
         </h1>
-        {singlePhrase ? (
+        {currentPhrase ? (
           <div className="dircard">
             <DirectoryCardPhrase
               width={"80%"}
               height={"340px"}
-              titleStyle={{ fontSize: "60px" }}
+              titleStyle={{ fontSize: "60px", marginBottom: "0" }}
               imgStyle={{ height: "120px", width: "100px", margin: "0px" }}
-              title={singlePhrase.phrase}
-              img={singlePhrase.img}
+              title={currentPhrase.phrase}
+              img={currentPhrase.img}
             />
           </div>
         ) : (
           <div>No phrase data available.</div>
         )}
         <div className="alphabet-btns alpha-btn">
-          <button className="alphabet-btns-back">
+          <button
+            onClick={onClickBack}
+            className="alphabet-btns-back phrases-left-btn"
+          >
             <i className="fa fa-angle-left"></i>
           </button>
-          <button className="alphabet-btns-forward">
+          <button
+            onClick={onClickForward}
+            className="alphabet-btns-forward phrases-right-btn"
+          >
             <i className="fa fa-angle-right"></i>
           </button>
         </div>
