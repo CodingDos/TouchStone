@@ -67,10 +67,10 @@ function DevTeam() {
           className="dev-team-app-logo"
           src="src/assets/logos/touchstone-logo.png"
         />
-        <h2 className="dev-team-header">About Touch Stone</h2>
+        <h2 className="dev-team-header">About TouchStone</h2>
         <main>
           <p className="dev-team-about-app">
-            Welcome to Touch Stone, where we're dedicated to making Braille
+            Welcome to TouchStone, where we're dedicated to making Braille
             learning accessible and engaging for everyone. Inspired by the needs
             of those experiencing vision loss and the curiosity of others eager
             to connect through Braille, our app features interactive quizzes and

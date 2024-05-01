@@ -23,9 +23,9 @@ import MatchingNumber from "./Pages/QuizDir/QuizTopics/Matching/MatchingNumber.j
 import MatchingPhrases from "./Pages/QuizDir/QuizTopics/Matching/MatchingPhrases.jsx";
 import FillIn from "./Pages/QuizDir/QuizTopics/FillIn/FillIn.jsx";
 import QuizDir from "./Pages/QuizDir/QuizDir.jsx";
-import PhrasesDir from "./Pages/PhrasesTopicDir/PhrasesDir/PhrasesDir.jsx"
-import Phrases from "./Pages/PhrasesTopicDir/PhrasesDir/Phrases/Phrases.jsx"
-import QuizTopics from "./Pages/QuizDir/QuizTopics/QuizTopics.jsx"
+import PhrasesDir from "./Pages/PhrasesTopicDir/PhrasesDir/PhrasesDir.jsx";
+import Phrases from "./Pages/PhrasesTopicDir/PhrasesDir/Phrases/Phrases.jsx";
+import QuizTopics from "./Pages/QuizDir/QuizTopics/QuizTopics.jsx";
 
 import DirectoryCard from "./Components/DirectoryCard/DirectoryCard.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
@@ -63,7 +63,7 @@ function App() {
         <Route path="/quiz/flashcards" element={<Flashcards />} />
         <Route path="/quiz/matching" element={<Matching />} />
         <Route path="/quiz/fillin" element={<FillIn />} />
-	      <Route path="/quiz/topics" element={<QuizTopics />} />
+        <Route path="/quiz/topics" element={<QuizTopics />} />
         {/* Quiz Flash Cards */}
         <Route path="/quiz/flashcards" element={<Flashcards />} />
         <Route
@@ -81,8 +81,7 @@ function App() {
         {/* Quiz Matching Cards */}
         <Route path="/quiz/matching/alphabet" element={<MatchingAlpha />} />
         <Route path="/quiz/matching/numbers" element={<MatchingNumber />} />
-        <Route path="/quiz/matching/phrases" element={<MatchingPhrases />}
-        />
+        <Route path="/quiz/matching/phrases" element={<MatchingPhrases />} />
 
         {/* component routes */}
         <Route path="/dircard" element={<DirectoryCard />} />
