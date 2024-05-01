@@ -30,14 +30,14 @@ function MatchingPhrases() {
     getPhrases().then((data) => {
       // Shuffle the alphabet data
       const shuffledPhrases = shuffleArray(data);
-      console.log(shuffledPhrases);
+      // console.log(shuffledPhrases);
       // Select 6 unique letters
       const uniquePhrases = selectUniqueAndShuffle(shuffledPhrases, 2);
-      console.log(uniquePhrases);
+      // console.log(uniquePhrases);
       setPairs(uniquePhrases);
       const shuffledBraille = selectUniqueAndShuffle(uniquePhrases, 2);
       setBrailleImg(shuffledBraille);
-      console.log(shuffledBraille);
+      // console.log(shuffledBraille);
     });
   }, []);
 
@@ -118,6 +118,15 @@ function MatchingPhrases() {
             {feedbackMessage}
           </div>
         )}
+<<<<<<< Updated upstream
+=======
+        {matchedPhCards.length === 2 && (
+          <>
+            <button onClick={() => window.location.reload()}>Continue</button>
+            <button onClick={() => window.history.back()}>Back</button>
+          </>
+        )}
+>>>>>>> Stashed changes
         <div
           className="matching-alpha-container"
           style={{ flexDirection: "column", alignItems: "center" }}
@@ -172,6 +181,7 @@ function MatchingPhrases() {
                         />
                       </div>
                     </div>
+<<<<<<< Updated upstream
                     {/* <DirectoryCardPhrase
                       // className="matching-height"
                       // height="-webkit-fill-available"
@@ -179,6 +189,8 @@ function MatchingPhrases() {
                       title={braille.phrase} 
 
                     /> */}
+=======
+>>>>>>> Stashed changes
                   </div>
                 )
             )}
