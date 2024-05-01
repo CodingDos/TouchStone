@@ -26,8 +26,8 @@ function DirectoryCardPhrase(props) {
 			let count = 0;
 			let index = -1;
 			let check = 0;
-			console.log("test3");
-			console.log(comboArr.length);
+			//console.log("test3");
+			//console.log(comboArr.length);
 			for(let j = 0; j<comboArr.length; j++) {
 				//console.log("test2");
 				if(i+comboArr[j].english.length+1<=phraseArr.length){
@@ -35,13 +35,13 @@ function DirectoryCardPhrase(props) {
 						//console.log(phraseArr[i+l]);
 						//console.log(comboArr[j].english[l]);
 						if(phraseArr[i+l].toUpperCase()===comboArr[j].english[l]){
-							console.log(comboArr[j].english[l]);
+							//console.log(comboArr[j].english[l]);
 							check++;
 						}
 					}
 					if(check===comboArr[j].english.length){
 						resultArr.push(comboArr[j].binary);
-						console.log(comboArr[j].binary);
+						//console.log(comboArr[j].binary);
 						imgArr.push(comboArr[j].braille_img);
 						i = i + comboArr[j].english.length-1;
 						break;
@@ -78,7 +78,6 @@ function DirectoryCardPhrase(props) {
 		alphaArr = test2;
 		console.log(alphaArr);
 		getBraille();
-		console.log(result);
 	}
 
 	const getData2 = async () => {
@@ -98,44 +97,20 @@ function DirectoryCardPhrase(props) {
   	}, [props.title]);
 
 
-	console.log("hi4");
-	console.log(props.title);
-	console.log(phrase);
+	console.log(result);
 	
 
   if (!props.title) {
     return <div>Loading...</div>; // Render loading state or null if title isn't available
   }
 
-  // Function to determine if a character adjustment is needed
-  function getNameStyle(title) {
-    if (title && title.length > 7) {
-      return { fontSize: "40px" }; // Smaller font size for long names
-    }
-    return {}; // Return an empty object if no adjustment is needed
-  }
-
   return (
     <div>
       <div className="dircard-examples">
-        <div
-          style={{
-            width: props.width,
-            height: props.height,
-          }}
-          className="dircard-example1"
-        >
-          <h3 className="card-title" style={getNameStyle(props.title)}>
-            {props.title}
-          </h3>
+        <div className="dircard-example1">
+          <h2 style={props.titleStyle}>{props.title}</h2>
           <div className="dircard-ref-img">
-            {props.img ? (
-              <img
-                src={props.img}
-                style={props.imgStyle}
-                alt="Descriptive text"
-              />
-            ) : null}
+            {props.img ? <img src={props.img} alt="Descriptive text" /> : null}
           </div>
           {result?.map((card, index) => (
             <img
