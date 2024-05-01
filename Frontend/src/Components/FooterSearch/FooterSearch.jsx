@@ -10,14 +10,14 @@ function FooterSearch() {
   const [answer, setAnswer] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
 
-  console.log("this is search", search);
-
   function openModal() {
     setModalOpen(true);
   }
 
   function closeModal() {
     setModalOpen(false);
+    setSearch("")
+    setAnswer("")
   }
 
   const handleClick = async () => {
@@ -35,10 +35,14 @@ function FooterSearch() {
     }
   };
 
-  console.log("this is answer", answer);
   return (
     <div className="footer">
       <Modal
+        style={{
+          overlay: {
+            backgroundColor: '#C7CFBB'
+          }
+        }}
         className="search-result-modal"
         isOpen={modalOpen}
         onRequestClose={closeModal}
@@ -48,16 +52,16 @@ function FooterSearch() {
           <button className='modal-close-btn' onClick={closeModal}><i className="fa fa-remove"></i></button>
         </div>
         <div className="root-search-result">
-          <div className="search-result">
+          <div className="search-question">
             <p className="render-search-question">
-              You Searched For:
-              {search}
+              What you searched for:
+              <p className="style-render-search-question">{search}</p>
             </p>
           </div>
           <div className="search-answer">
             <p className="render-search-answer">
               Result:
-              {answer.response}
+              <p className="style-render-search-answer">{answer.response}</p>
             </p>
           </div>
         </div>
