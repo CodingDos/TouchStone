@@ -30,3 +30,7 @@
   padding: 20px;
   margin-top: 0;
 }
+
+.slick-arrow{
+  display: none !important;
+}
