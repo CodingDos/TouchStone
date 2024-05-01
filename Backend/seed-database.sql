@@ -117,7 +117,7 @@ INSERT INTO braille_app_phrases (phrase, category, img)
 	('East', 'Dir', 'https://i.imgur.com/mc6kILd.png'),
 	('West', 'Dir', 'https://i.imgur.com/cy4AJA5.png'),
 	('North', 'Dir', 'https://i.imgur.com/bYL6Qf1.png'),
-	('Sourth', 'Dir', 'https://i.imgur.com/QuFreJn.png'),
+	('South', 'Dir', 'https://i.imgur.com/QuFreJn.png'),
 	('Morning', 'Tim', 'https://i.imgur.com/odGYMM3.png'),
 	('Noon', 'Tim', 'https://i.imgur.com/3kJYi4R.png'),
 	('Afternoon', 'Tim', 'https://i.imgur.com/gW2kePV.png'),
