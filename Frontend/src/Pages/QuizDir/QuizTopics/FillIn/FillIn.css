@@ -5,7 +5,6 @@
 .fillin-carosel {
   display: flex;
   flex-direction: column;
-  height: 95%;
   padding-top: 100px;
 }
 
