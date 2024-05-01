@@ -48,7 +48,6 @@
   border-radius: 5px;
 }
 
-<<<<<<< Updated upstream
 .correct-feedback {
   background-color: #dff0d8;
   color: #3c763d;
@@ -60,14 +59,12 @@
   color: #a94442;
   border: 1px solid #ebccd1;
 }
-/* 
-  .phrase-container h3 {
-    display: none;
-  }
-   */
-=======
-  /* .phrase-container h3 {
-    display: none;
-  }
-   */
->>>>>>> Stashed changes
+
+.refresh-button {
+  margin-top: 10px;
+}
+
+.continue-button {
+  margin-top: 10px;
+  margin-right: 15px;
+}
