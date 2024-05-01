@@ -69,7 +69,7 @@ function Numbers() {
             imgStyle={{ width: "130px" }}
             className="numcard"
             width={"80%"}
-            height={"370px"}
+            height={"360px"}
             title={card.english}
             brailleimg={card.braille_img}
           />
