@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   height: 350px;
+  /* padding-top: 15px; */
 }
 
 .carosel {
@@ -109,4 +110,27 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
   transform: scale(1);
+}
+
+
+.feedback-message-container {
+  height: 40px; /* Adjust the height as needed */
+  margin-bottom: 10px;
+}
+
+.feedback-message {
+  /* padding: 10px; */
+  border-radius: 5px;
+}
+
+.correct-feedback {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+.incorrect-feedback {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
 }

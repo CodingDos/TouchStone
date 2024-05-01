@@ -95,15 +95,21 @@ function FillIn() {
         >
           Fill In
         </h1>
+        <div className="feedback-message-container">
         {message && (
           <div
             className={`feedback-message ${
               message === "Correct!" ? "correct-feedback" : "incorrect-feedback"
             }`}
+            style={{
+              marginTop: "0"
+            }}
           >
             {message}
           </div>
         )}
+        </div>
+        <div className="fillin-content">
         <div className="fillin-container">
           <div
             className="card"
@@ -191,6 +197,7 @@ function FillIn() {
           <button onClick={onClickForward} className="btns-forward">
             <i class="fa fa-angle-right"></i>
           </button>
+        </div>
         </div>
       </div>
       <FooterSearch />
