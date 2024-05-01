@@ -14,11 +14,7 @@
 }
 
 .card:hover {
-<<<<<<< Updated upstream
-  border: 8px solid #663d1f;
-=======
   border: 7px solid #663d1f;
->>>>>>> Stashed changes
 }
 
 .card-ref-img {
