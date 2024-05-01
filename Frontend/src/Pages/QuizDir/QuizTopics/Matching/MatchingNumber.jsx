@@ -25,14 +25,14 @@ function MatchingNumber() {
     getNumbers().then((data) => {
       // Shuffle the alphabet data
       const shuffledNumbers = shuffleArray(data);
-      console.log(shuffledNumbers);
+      // console.log(shuffledNumbers);
       // Select 6 unique letters
       const uniqueNumbers = selectUniqueAndShuffle(shuffledNumbers, 6);
-      console.log(uniqueNumbers);
+      // console.log(uniqueNumbers);
       setPairs(uniqueNumbers);
       const shuffledBraille = selectUniqueAndShuffle(uniqueNumbers, 6);
       setBrailleImg(shuffledBraille);
-      console.log(shuffledBraille);
+      // console.log(shuffledBraille);
     });
   }, []);
 
@@ -107,6 +107,9 @@ function MatchingNumber() {
   <div className={`feedback-message ${feedbackMessage === 'Correct!' ? 'correct-feedback' : 'incorrect-feedback'}`}>
     {feedbackMessage}
   </div>
+)}
+{matchedNumCards.length === 6 && (
+  <button onClick={() => window.location.reload()}>Refresh</button>
 )}
         <div className="matching-alpha-container">
           <div className="letter-card-matching">

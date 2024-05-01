@@ -108,6 +108,9 @@ function MatchingAlpha() {
     {feedbackMessage}
   </div>
 )}
+{matchedAlphaCards.length === 6 && (
+  <button onClick={() => window.location.reload()}>Refresh</button>
+)}
         <div className="matching-alpha-container">
           <div className="letter-card-matching">
             {pairs.map(

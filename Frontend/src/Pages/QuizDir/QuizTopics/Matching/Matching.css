@@ -48,6 +48,7 @@
   border-radius: 5px;
 }
 
+<<<<<<< Updated upstream
 .correct-feedback {
   background-color: #dff0d8;
   color: #3c763d;
@@ -64,3 +65,9 @@
     display: none;
   }
    */
+=======
+  /* .phrase-container h3 {
+    display: none;
+  }
+   */
+>>>>>>> Stashed changes
