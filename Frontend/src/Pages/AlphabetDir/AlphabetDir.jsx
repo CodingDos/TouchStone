@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -22,17 +21,25 @@ function AlphabetDir() {
   return (
     <div className="alphabetdir">
       <Navbar />
-      <h1 className="directory-title">Alphabet</h1>
+      <h1
+        onClick={() => navigate("/home")}
+        className="directory-title alpha-title"
+      >
+        Alphabet
+      </h1>
+      {/* <div className="boo"> */}
       <div className="alphabet-container">
         {cards.map((card, idx) => (
           <div
+            key={idx}
             className="alphabet-card"
             onClick={() => navigate(`/alphabet/${card.english}`)}
           >
             <Card
+              imgStyle={{ height: "80px", width: "65px", margin: "0px" }}
               index={idx}
-              width={"30%"}
-              height={"30%"}
+              width={"360px"}
+              height={"230px"}
               title={card.english}
               brailleimg={card.braille_img}
               refimg={card.learning_img}
@@ -40,6 +47,7 @@ function AlphabetDir() {
           </div>
         ))}
       </div>
+      {/* </div> */}
       <FooterSearch />
     </div>
   );

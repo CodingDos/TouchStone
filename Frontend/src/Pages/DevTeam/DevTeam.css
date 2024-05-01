@@ -1,0 +1,36 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+.about-team-container {
+  margin-bottom: 100px;
+}
+
+.slick-dots {
+  background-color: #e8e7dd;
+}
+
+.developers-container .slick-slider {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 20px;
+}
+
+.dev-team-app-logo {
+  margin: 60px 0 0 0;
+  width: 90%;
+  height: 300px;
+}
+.dev-team-header {
+  margin-top: 0px;
+}
+
+.dev-team-about-app {
+  text-align: left;
+  padding: 20px;
+  margin-top: 0;
+}

@@ -4,15 +4,15 @@ import { getCharacter, getCombos } from "../../../Services/characters.js";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import FooterSearch from "../../../Components/FooterSearch/FooterSearch.jsx";
-import "./Combo.css"
+import "./Combo.css";
 
 function Combo() {
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState([]);
   const [card, setCard] = useState([]);
-  const {id: cardId} = useParams()
+  const { id: cardId } = useParams();
 
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   useEffect(() => {
     const getCard = async () => {
       const test = await getCharacter(cardId);
@@ -29,51 +29,59 @@ function Combo() {
     getCards();
   }, []);
 
-  const onClickBack = async() => {
-    const currentidx = cards.findIndex(item => item.english ===cardId)
-    const previousidx = currentidx - 1
-    if(previousidx === -1 ){
-      navigate(`/combo/${cards[cards.length-1].english}`)
-    }else{
-    navigate(`/combo/${cards[previousidx].english}`)
-  }}
+  const onClickBack = async () => {
+    const currentidx = cards.findIndex((item) => item.english === cardId);
+    const previousidx = currentidx - 1;
+    if (previousidx === -1) {
+      navigate(`/combo/${cards[cards.length - 1].english}`);
+    } else {
+      navigate(`/combo/${cards[previousidx].english}`);
+    }
+  };
 
-  const onClickForward = async() => {
-    const currentidx = cards.findIndex(item => item.english ===cardId)
-    const nextidx = currentidx + 1
-    if(nextidx === 19 ){
-      navigate(`/combo/${cards[0].english}`)
-    }else{
-    navigate(`/combo/${cards[nextidx].english}`)
-  }}
+  const onClickForward = async () => {
+    const currentidx = cards.findIndex((item) => item.english === cardId);
+    const nextidx = currentidx + 1;
+    if (nextidx === 19) {
+      navigate(`/combo/${cards[0].english}`);
+    } else {
+      navigate(`/combo/${cards[nextidx].english}`);
+    }
+  };
 
   return (
     <div className="combo">
-      <Navbar/>
+      <Navbar />
       <div className="combo-carosel">
-        <h1 className="directory-title">Combos</h1>
+        <h1
+          onClick={() => navigate("/combodir")}
+          className="directory-title alpha-title"
+        >
+          Combos
+        </h1>
         <div className="carosel">
           <Card
+            titleStyle={{ fontSize: "80px" }}
             className="combocard"
             width={"80%"}
-            height={"auto"}
+            height={"370px"}
             title={card.english}
             brailleimg={card.braille_img}
           />
         </div>
-        <div className="combo-btns">
-          <button onClick={onClickBack} className="combo-btns-back">
-            <i class="fa fa-angle-left"></i>
+        <div className="combo-btns alpha-btn">
+          <button onClick={onClickBack} className="combo-btns-back ">
+            <i className="fa fa-angle-left"></i>
           </button>
           <button onClick={onClickForward} className="combo-btns-forward">
-            <i class="fa fa-angle-right"></i>
+            <i className="fa fa-angle-right"></i>
           </button>
         </div>
-      </div> 
-      
-      <FooterSearch/>
+      </div>
+
+      <FooterSearch />
     </div>
-  )
+  );
 }
 
-export default Combo
+export default Combo;

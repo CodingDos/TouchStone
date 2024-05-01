@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -24,17 +23,25 @@ function NumberDir() {
   return (
     <div className="numberdir">
       <Navbar />
-      <h1 className="directory-title">Number</h1>
+      <h1
+        onClick={() => navigate("/home")}
+        className="directory-title  alpha-title"
+      >
+        Numbers
+      </h1>
       <div className="number-container">
         {cards.map((card, idx) => (
           <div
+            key={idx}
             className="number-card"
             onClick={() => navigate(`/number/${card.english}`)}
           >
             <Card
               index={idx}
-              width={"30%"}
-              height={"30%"}
+              titleStyle={{ fontSize: "50px" }}
+              imgStyle={{ width: "80px" }}
+              width={"360px"}
+              height={"200px"}
               title={card.english}
               brailleimg={card.braille_img}
             />

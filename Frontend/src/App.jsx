@@ -18,6 +18,9 @@ import FlashcardsAlpha from "./Pages/QuizDir/QuizTopics/Flashcards/FlashcardsAlp
 import FlashcardsNumber from "./Pages/QuizDir/QuizTopics/Flashcards/FlashcardsNumber.jsx";
 import FlashcardsPhrases from "./Pages/QuizDir/QuizTopics/Flashcards/FlashcardsPhrases.jsx";
 import Matching from "./Pages/QuizDir/QuizTopics/Matching/Matching.jsx";
+import MatchingAlpha from "./Pages/QuizDir/QuizTopics/Matching/MatchingAlpha.jsx";
+import MatchingNumber from "./Pages/QuizDir/QuizTopics/Matching/MatchingNumber.jsx";
+import MatchingPhrases from "./Pages/QuizDir/QuizTopics/Matching/MatchingPhrases.jsx";
 import FillIn from "./Pages/QuizDir/QuizTopics/FillIn/FillIn.jsx";
 import QuizDir from "./Pages/QuizDir/QuizDir.jsx";
 import PhrasesDir from "./Pages/PhrasesTopicDir/PhrasesDir/PhrasesDir.jsx"
@@ -74,6 +77,11 @@ function App() {
         <Route
           path="/quiz/flashcards/phrases"
           element={<FlashcardsPhrases />}
+        />
+        {/* Quiz Matching Cards */}
+        <Route path="/quiz/matching/alphabet" element={<MatchingAlpha />} />
+        <Route path="/quiz/matching/numbers" element={<MatchingNumber />} />
+        <Route path="/quiz/matching/phrases" element={<MatchingPhrases />}
         />
 
         {/* component routes */}

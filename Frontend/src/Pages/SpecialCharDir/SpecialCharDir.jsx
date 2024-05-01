@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -6,7 +5,7 @@ import Card from "../../Components/Card/Card.jsx";
 import { getPunctuation } from "../../Services/characters.js";
 import FooterSearch from "../../Components/FooterSearch/FooterSearch.jsx";
 
-import "./SpecialCharDir.css"
+import "./SpecialCharDir.css";
 
 function SpecialCharDir() {
   const [cards, setCards] = useState([]);
@@ -20,32 +19,48 @@ function SpecialCharDir() {
     getCards();
   }, []);
 
-console.log(cards)
+  // Function to determine if a character adjustment is needed
+  function getNameStyle(character) {
+    if (character.length > 5) {
+      return { fontSize: "20px" }; // Smaller font size for long names
+    }
+    return {}; // Return an empty object if no adjustment is needed
+  }
+
+  console.log(cards);
 
   return (
     <div className="punctuationdir">
-      <Navbar/>
-      <h1 className="directory-title">Special Characters</h1>
+      <Navbar />
+      <h1
+        onClick={() => navigate("/home")}
+        className="directory-title alpha-title"
+      >
+        Special Characters
+      </h1>
       <div className="punctuation-container">
         {cards.map((card, idx) => (
           <div
+            key={idx}
             className="punctuation-card"
             onClick={() => navigate(`/specialchar/${card.binary}`)}
           >
             <Card
               index={idx}
-              width={"70%"}
-              height={"30%"}
+              titleStyle={getNameStyle(card.english)}
+              imgStyle={{ width: "80px" }}
+              width={"360px"}
+              height={"200px"}
               title={card.english}
               brailleimg={card.braille_img}
             />
           </div>
         ))}
-      </div>  
+      </div>
 
-      <FooterSearch/>
+      <FooterSearch />
     </div>
-  )
+  );
 }
 
-export default SpecialCharDir
+export default SpecialCharDir;

@@ -1,31 +1,30 @@
-.numberdir{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.5rem;
-    padding-top: 100px;
-    padding-bottom: 55px;
+.numberdir {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  padding-top: 100px;
+  padding-bottom: 55px;
 }
 
-.number-container{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.5rem;
-
+.number-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left: -10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
 }
 
-.number-card{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.5rem;
+.number-card {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
 }
-
-

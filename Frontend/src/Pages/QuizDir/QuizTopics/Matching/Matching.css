@@ -1,0 +1,68 @@
+.page-container {
+    margin-top: 75px;
+}
+
+
+.matching-alpha-container {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 80px; */
+}
+
+.matching-card {
+    height: 200px;
+    width: 160px;
+    margin: 10px
+}
+
+.matching-height {
+    height: -webkit-fill-available;
+}
+
+.matching-title {
+    padding-top: 15px;
+}
+
+.match-title {
+    margin: 0;
+    color: #663D1F;
+}
+
+
+.matched {
+    background-color: #9ef79f; /* Light green background color */
+    border: 2px solid #4caf50; /* Green border */
+    /* Add any additional styling for matched cards here */
+  }
+
+.card.matched {
+    /* Add your styling for matched cards here */
+    border: 10px solid green;
+}
+
+/* .card {
+    border: 10px solid black;
+} */
+
+.feedback-message {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .correct-feedback {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+  }
+  
+  .incorrect-feedback {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+  }
+
+  .phrase-container h3 {
+    display: none;
+  }
+  

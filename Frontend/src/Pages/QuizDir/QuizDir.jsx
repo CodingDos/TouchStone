@@ -8,18 +8,36 @@ function QuizDir() {
   const navigate = useNavigate();
 
   return (
-    <div className="quizDirectoryContainer">
+    <div>
       <Navbar />
-      QuizDir
-      <div className="quizDirectoryOptionsContainer">
-        <div onClick={() => navigate("/quiz/flashcards")}>
-          <Card title="Flashcards" height="150px" />
-        </div>
-        <div onClick={() => navigate("/quiz/matching")}>
-          <Card title="Matching" height="150px" />
-        </div>
-        <div onClick={() => navigate("/quiz/topics", { state : { quiz : "fillin" } })}>
-          <Card title="Fill In" height="150px" />
+      <div className="quizDirectoryContainer">
+        <h1
+          onClick={() => navigate("/home")}
+          className="directory-title quiz-dir-title alpha-title"
+        >
+          Quiz
+        </h1>
+        <div className="quizDirectoryOptionsContainer">
+          <div
+            className="quiz-dir-options"
+            onClick={() => navigate("/quiz/flashcards")}
+          >
+            <Card title="Flashcards" width={"120%"} height={"150px"} />
+          </div>
+          <div
+            className="quiz-dir-options"
+            onClick={() => navigate("/quiz/matching")}
+          >
+            <Card title="Matching" width={"120%"} height={"150px"} />
+          </div>
+          <div
+            className="quiz-dir-options"
+            onClick={() =>
+              navigate("/quiz/topics", { state: { quiz: "fillin" } })
+            }
+          >
+            <Card title="Fill In" width={"120%"} height={"150px"} />
+          </div>
         </div>
       </div>
       <FooterSearch />
