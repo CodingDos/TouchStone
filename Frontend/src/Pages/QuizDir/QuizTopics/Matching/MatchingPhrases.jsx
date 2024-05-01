@@ -14,6 +14,8 @@ import "../../../../Components/Card/Card.css";
 import DirectoryCardPhrase from "../../../../Components/DirectoryCard/DirectoryCardPhrase.jsx";
 
 function MatchingPhrases() {
+  const navigate = useNavigate();
+
   const [pairs, setPairs] = useState([]);
   const [brailleImg, setBrailleImg] = useState([]);
 
@@ -104,24 +106,20 @@ function MatchingPhrases() {
       <Navbar />
       <div className="page-container">
         <div className="matching-title">
-          <h2 className="match-title">Phrases</h2>
+          <h2 className="match-title" onClick={() => navigate("/quiz/matching/")}>Phrases</h2>
           <h3 className="match-title">Match The Cards</h3>
         </div>
-        {feedbackMessage && (
-          <div
-            className={`feedback-message ${
-              feedbackMessage === "Correct!"
-                ? "correct-feedback"
-                : "incorrect-feedback"
-            }`}
-          >
-            {feedbackMessage}
-          </div>
-        )}
+
+        {matchedPhCards.length !== 2 && feedbackMessage && (
+  <div className={`feedback-message ${feedbackMessage === 'Correct!' ? 'correct-feedback' : 'incorrect-feedback'}`}>
+    {feedbackMessage}
+  </div>
+)}
         {matchedPhCards.length === 2 && (
           <>
-            <button onClick={() => window.location.reload()}>Continue</button>
-            <button onClick={() => window.history.back()}>Back</button>
+  <h3 className="quiz-complete">Great Work!</h3>
+            <button className="continue-button" onClick={() => window.location.reload()}>Continue</button>
+            <button className="back-button" onClick={() => window.history.back()}>Back</button>
           </>
         )}
         <div
