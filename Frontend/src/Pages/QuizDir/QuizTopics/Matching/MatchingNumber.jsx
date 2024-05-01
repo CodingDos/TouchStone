@@ -9,6 +9,8 @@ import "./Matching.css";
 import "../../../../Components/Card/Card.css"
 
 function MatchingNumber() {
+  const navigate = useNavigate();
+
   const [pairs, setPairs] = useState([]);
   const [brailleImg, setBrailleImg] = useState([]);
 
@@ -25,14 +27,14 @@ function MatchingNumber() {
     getNumbers().then((data) => {
       // Shuffle the alphabet data
       const shuffledNumbers = shuffleArray(data);
-      console.log(shuffledNumbers);
+      // console.log(shuffledNumbers);
       // Select 6 unique letters
       const uniqueNumbers = selectUniqueAndShuffle(shuffledNumbers, 6);
-      console.log(uniqueNumbers);
+      // console.log(uniqueNumbers);
       setPairs(uniqueNumbers);
       const shuffledBraille = selectUniqueAndShuffle(uniqueNumbers, 6);
       setBrailleImg(shuffledBraille);
-      console.log(shuffledBraille);
+      // console.log(shuffledBraille);
     });
   }, []);
 
@@ -88,7 +90,6 @@ function MatchingNumber() {
     } else {
       console.log("Incorrect!");
       setFeedbackMessage("Try Again");
-
     }
     // Reset selected cards
     setSelectedNumCard(null);
@@ -100,13 +101,20 @@ function MatchingNumber() {
       <Navbar />
       <div className="page-container">
         <div className="matching-title">
-            <h2 className="match-title">Number</h2>
+            <h2 className="match-title" onClick={() => navigate("/quiz/matching/")}>Number</h2>
             <h3 className="match-title">Match The Cards</h3>
         </div>
-        {feedbackMessage && (
+
+        {matchedNumCards.length !== 6 && feedbackMessage && (
   <div className={`feedback-message ${feedbackMessage === 'Correct!' ? 'correct-feedback' : 'incorrect-feedback'}`}>
     {feedbackMessage}
   </div>
+)}
+{matchedNumCards.length === 6 && (
+  <>
+  <h3 className="quiz-complete">Great Work!</h3>
+  <button className="refresh-button" onClick={() => window.location.reload()}>Keep Going</button>
+  </>
 )}
         <div className="matching-alpha-container">
           <div className="letter-card-matching">

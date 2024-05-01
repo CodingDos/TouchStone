@@ -21,8 +21,8 @@ function SpecialCharDir() {
 
   // Function to determine if a character adjustment is needed
   function getNameStyle(character) {
-    if (character.length > 5) {
-      return { fontSize: "20px" }; // Smaller font size for long names
+    if (character.length > 4) {
+      return { fontSize: "17px" }; // Smaller font size for long names
     }
     return {}; // Return an empty object if no adjustment is needed
   }

@@ -4,12 +4,18 @@ import FooterSearch from "../../../../Components/FooterSearch/FooterSearch.jsx";
 import Card from "../../../../Components/Card/Card.jsx";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getNumbers, getAlphabet, getPhrases } from "../../../../Services/characters.js";
+import {
+  getNumbers,
+  getAlphabet,
+  getPhrases,
+} from "../../../../Services/characters.js";
 import "./Matching.css";
-import "../../../../Components/Card/Card.css"
+import "../../../../Components/Card/Card.css";
 import DirectoryCardPhrase from "../../../../Components/DirectoryCard/DirectoryCardPhrase.jsx";
 
 function MatchingPhrases() {
+  const navigate = useNavigate();
+
   const [pairs, setPairs] = useState([]);
   const [brailleImg, setBrailleImg] = useState([]);
 
@@ -26,14 +32,14 @@ function MatchingPhrases() {
     getPhrases().then((data) => {
       // Shuffle the alphabet data
       const shuffledPhrases = shuffleArray(data);
-      console.log(shuffledPhrases);
+      // console.log(shuffledPhrases);
       // Select 6 unique letters
       const uniquePhrases = selectUniqueAndShuffle(shuffledPhrases, 2);
-      console.log(uniquePhrases);
+      // console.log(uniquePhrases);
       setPairs(uniquePhrases);
       const shuffledBraille = selectUniqueAndShuffle(uniquePhrases, 2);
       setBrailleImg(shuffledBraille);
-      console.log(shuffledBraille);
+      // console.log(shuffledBraille);
     });
   }, []);
 
@@ -89,7 +95,6 @@ function MatchingPhrases() {
     } else {
       console.log("Incorrect!");
       setFeedbackMessage("Try Again");
-
     }
     // Reset selected cards
     setSelectedPhCard(null);
@@ -101,15 +106,26 @@ function MatchingPhrases() {
       <Navbar />
       <div className="page-container">
         <div className="matching-title">
-            <h2 className="match-title">Phrases</h2>
-            <h3 className="match-title">Match The Cards</h3>
+          <h2 className="match-title" onClick={() => navigate("/quiz/matching/")}>Phrases</h2>
+          <h3 className="match-title">Match The Cards</h3>
         </div>
-        {feedbackMessage && (
+
+        {matchedPhCards.length !== 2 && feedbackMessage && (
   <div className={`feedback-message ${feedbackMessage === 'Correct!' ? 'correct-feedback' : 'incorrect-feedback'}`}>
     {feedbackMessage}
   </div>
 )}
-        <div className="matching-alpha-container" style={{flexDirection:'column', alignItems:'center'}}>
+        {matchedPhCards.length === 2 && (
+          <>
+  <h3 className="quiz-complete">Great Work!</h3>
+            <button className="continue-button" onClick={() => window.location.reload()}>Continue</button>
+            <button className="back-button" onClick={() => window.history.back()}>Back</button>
+          </>
+        )}
+        <div
+          className="matching-alpha-container"
+          style={{ flexDirection: "column", alignItems: "center" }}
+        >
           <div className="letter-card-matching">
             {pairs.map(
               (pair, index) =>
@@ -119,7 +135,7 @@ function MatchingPhrases() {
                   <div
                     key={index}
                     className="matching-card"
-                    style={{width:'auto'}}
+                    style={{ width: "auto" }}
                     onClick={() => handleNumCardClick(index)}
                   >
                     <Card
@@ -142,24 +158,24 @@ function MatchingPhrases() {
                   <div
                     key={index}
                     className="matching-card"
-                    style={{width:'auto',height:'auto'}}
+                    style={{ width: "auto", height: "auto" }}
                     onClick={() => handleBinaryCardClick(index)}
                   >
-
-<div className="dircard" style={{height:'min-content',width: '250px', padding: '15px'}}>
-          <div className='phrase-container'>
-          <DirectoryCardPhrase
-          title={braille.phrase} 
-          />
-          </div>
-      </div>
-                    {/* <DirectoryCardPhrase
-                      // className="matching-height"
-                      // height="-webkit-fill-available"
-                      // brailleimg={braille.braille_img}
-                      title={braille.phrase} 
-
-                    /> */}
+                    <div
+                      className="dircard"
+                      style={{
+                        height: "min-content",
+                        width: "250px",
+                        padding: "15px",
+                      }}
+                    >
+                      <div className="phrase-container">
+                        <DirectoryCardPhrase
+                          titleStyle={{ display: "none" }}
+                          title={braille.phrase}
+                        />
+                      </div>
+                    </div>
                   </div>
                 )
             )}
@@ -171,4 +187,4 @@ function MatchingPhrases() {
   );
 }
 
-export default MatchingPhrases
+export default MatchingPhrases;

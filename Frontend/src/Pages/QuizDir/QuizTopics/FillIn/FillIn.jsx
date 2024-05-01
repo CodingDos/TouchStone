@@ -89,16 +89,27 @@ function FillIn() {
     <div className="fillin">
       <Navbar />
       <div className="fillin-carosel">
-        <h1 onClick={() => navigate("/quiz")} className="directory-title">
+        <h1
+          onClick={() => navigate("/quiz")}
+          className="directory-title alpha-title"
+        >
           Fill In
         </h1>
-        <h2 className="message">{message}</h2>
-        <div className="carosel">
+        {message && (
+          <div
+            className={`feedback-message ${
+              message === "Correct!" ? "correct-feedback" : "incorrect-feedback"
+            }`}
+          >
+            {message}
+          </div>
+        )}
+        <div className="fillin-container">
           <div
             className="card"
             style={{
               width: "60%",
-              height: "auto",
+              height: "300px",
             }}
           >
             <h3 className="card-title">

@@ -1,27 +1,25 @@
-.phrasesdir{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.5rem;
-    padding-top: 100px;
-    padding-bottom: 55px;
+.phrasesdir {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  padding-top: 100px;
+  padding-bottom: 55px;
 }
 
-.phrase-container{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1.5rem;
-    
+.phrase-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.directory-title{
-    margin: 0;
-    font-size: 35px;
+.directory-title {
+  margin: 0;
+  font-size: 35px;
+  color: #663d1f;
 }
-
-

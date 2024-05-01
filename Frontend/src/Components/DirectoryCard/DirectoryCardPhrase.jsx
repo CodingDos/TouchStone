@@ -107,13 +107,35 @@ function DirectoryCardPhrase(props) {
     return <div>Loading...</div>; // Render loading state or null if title isn't available
   }
 
+  // Function to determine if a character adjustment is needed
+  function getNameStyle(title) {
+    if (title && title.length > 7) {
+      return { fontSize: "40px" }; // Smaller font size for long names
+    }
+    return {}; // Return an empty object if no adjustment is needed
+  }
+
   return (
     <div>
       <div className="dircard-examples">
-        <div className="dircard-example1">
-          <h2 style={props.titleStyle}>{props.title}</h2>
+        <div
+          style={{
+            width: props.width,
+            height: props.height,
+          }}
+          className="dircard-example1"
+        >
+          <h3 className="card-title" style={getNameStyle(props.title)}>
+            {props.title}
+          </h3>
           <div className="dircard-ref-img">
-            {props.img ? <img src={props.img} alt="Descriptive text" /> : null}
+            {props.img ? (
+              <img
+                src={props.img}
+                style={props.imgStyle}
+                alt="Descriptive text"
+              />
+            ) : null}
           </div>
           {result?.map((card, index) => (
             <img

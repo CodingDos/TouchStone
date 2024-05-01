@@ -65,7 +65,7 @@ function Alphabet() {
             imgStyle={{ height: "140px", width: "100px", margin: "0px" }}
             className="alphacard"
             width={"80%"}
-            height={"370px"}
+            height={"360px"}
             title={card.english}
             brailleimg={card.braille_img}
             refimg={card.learning_img}
