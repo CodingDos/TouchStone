@@ -9,6 +9,8 @@ import "./Matching.css";
 import "../../../../Components/Card/Card.css"
 
 function MatchingNumber() {
+  const navigate = useNavigate();
+
   const [pairs, setPairs] = useState([]);
   const [brailleImg, setBrailleImg] = useState([]);
 
@@ -88,7 +90,6 @@ function MatchingNumber() {
     } else {
       console.log("Incorrect!");
       setFeedbackMessage("Try Again");
-
     }
     // Reset selected cards
     setSelectedNumCard(null);
@@ -100,16 +101,20 @@ function MatchingNumber() {
       <Navbar />
       <div className="page-container">
         <div className="matching-title">
-            <h2 className="match-title">Number</h2>
+            <h2 className="match-title" onClick={() => navigate("/quiz/matching/")}>Number</h2>
             <h3 className="match-title">Match The Cards</h3>
         </div>
-        {feedbackMessage && (
+
+        {matchedNumCards.length !== 6 && feedbackMessage && (
   <div className={`feedback-message ${feedbackMessage === 'Correct!' ? 'correct-feedback' : 'incorrect-feedback'}`}>
     {feedbackMessage}
   </div>
 )}
 {matchedNumCards.length === 6 && (
-  <button onClick={() => window.location.reload()}>Refresh</button>
+  <>
+  <h3 className="quiz-complete">Great Work!</h3>
+  <button className="refresh-button" onClick={() => window.location.reload()}>Keep Going</button>
+  </>
 )}
         <div className="matching-alpha-container">
           <div className="letter-card-matching">

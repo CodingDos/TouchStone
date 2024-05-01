@@ -9,6 +9,8 @@ import "./Matching.css";
 import "../../../../Components/Card/Card.css";
 
 function MatchingAlpha() {
+  const navigate = useNavigate();
+
   const [pairs, setPairs] = useState([]);
   const [brailleImg, setBrailleImg] = useState([]);
 
@@ -99,10 +101,16 @@ function MatchingAlpha() {
       <Navbar />
       <div className="page-container">
         <div className="matching-title">
-          <h2 className="match-title">Alphabet</h2>
+          <h2
+            className="match-title"
+            onClick={() => navigate("/quiz/matching/")}
+          >
+            Alphabet
+          </h2>
           <h3 className="match-title">Match The Cards</h3>
         </div>
-        {feedbackMessage && (
+
+        {matchedAlphaCards.length !== 6 && feedbackMessage && (
           <div
             className={`feedback-message ${
               feedbackMessage === "Correct!"
@@ -114,7 +122,15 @@ function MatchingAlpha() {
           </div>
         )}
         {matchedAlphaCards.length === 6 && (
-          <button onClick={() => window.location.reload()}>Refresh</button>
+          <>
+            <h3 className="quiz-complete">Great Work!</h3>
+            <button
+              className="refresh-button"
+              onClick={() => window.location.reload()}
+            >
+              Refresh
+            </button>
+          </>
         )}
         <div className="matching-alpha-container">
           <div className="letter-card-matching">
