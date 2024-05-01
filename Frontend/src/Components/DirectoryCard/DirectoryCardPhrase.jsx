@@ -35,15 +35,29 @@ function DirectoryCardPhrase(props) {
   return (
     <div>
       <div className="dircard-examples">
-        <div className="dircard-example1">
-          <h3 style={props.titleStyle}>{props.title}</h3>
+        <div
+          style={{
+            width: props.width,
+            height: props.height,
+          }}
+          className="dircard-example1"
+        >
+          <h3 className="card-title" style={props.titleStyle}>
+            {props.title}
+          </h3>
           <div className="dircard-ref-img">
-            {props.img ? <img src={props.img} alt="Descriptive text" /> : null}
+            {props.img ? (
+              <img
+                src={props.img}
+                style={props.imgStyle}
+                alt="Descriptive text"
+              />
+            ) : null}
           </div>
           {phrase?.map((card) => (
             <img
               className="dircard-braille-img"
-              style={props.imgStyle}
+              style={props.brailleStyle}
               src={card?.braille_img}
             />
           ))}

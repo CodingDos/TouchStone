@@ -1,10 +1,10 @@
-import johnImg from "../../assets/devs/john-img.png";
-import stevenImg from "../../assets/devs/steven-img.png";
-import noshinImg from "../../assets/devs/noshin-img.png";
-import karinaImg from "../../assets/devs/karina-img.png";
-import xuemeiImg from "../../assets/devs/xuemei-img.png";
-import graceImg from "../../assets/devs/grace-img.png";
-import lukeImg from "../../assets/devs/luke-img.png";
+import johnImg from "../assets/devs/john-img.png";
+import stevenImg from "../assets/devs/steven-img.png";
+import noshinImg from "../assets/devs/noshin-img.png";
+import karinaImg from "../assets/devs/karina-img.png";
+import xuemeiImg from "../assets/devs/xuemei-img.png";
+import graceImg from "../assets/devs/grace-img.png";
+import lukeImg from "../assets/devs/luke-img.png";
 
 const developers = [
   {
@@ -49,7 +49,7 @@ const developers = [
     name: "Grace Clower",
     img: graceImg,
     role: "Developer",
-    specialty: "Front End",
+    specialty: "Lead Front End",
     github: "https://github.com/geclower",
     linkedIn: "https://www.linkedin.com/in/grace-clower/",
   },
@@ -57,7 +57,7 @@ const developers = [
     name: "Luke Bandeen",
     img: lukeImg,
     role: "Developer",
-    specialty: "Back End & Front End",
+    specialty: "Lead Back End & Front End",
     github: "https://github.com/labandor",
     linkedIn: "https://www.linkedin.com/in/luke-bandeen/",
   },
