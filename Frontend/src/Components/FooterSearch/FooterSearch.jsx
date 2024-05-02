@@ -70,7 +70,7 @@ function FooterSearch() {
         <input
           type="text"
           value={search}
-          placeholder="Search"
+          placeholder="A.I Search"
           onChange={(e) => setSearch(e.target.value)}
         />
         <button className="footer-searchbar-btn" onClick={handleClick}>

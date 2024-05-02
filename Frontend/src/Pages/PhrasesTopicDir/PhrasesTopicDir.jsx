@@ -11,7 +11,7 @@ function PhrasesTopicDir() {
     <div className="phrasesdir">
       <Navbar />
       <h1 onClick={() => navigate("/home")} className="directory-title">
-        Common Phrases
+        Words
       </h1>
       <div className="phrase-container">
         <div className="dircard" onClick={() => navigate("/phrases/Sgn")}>

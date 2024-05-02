@@ -16,6 +16,7 @@ function Phrases() {
   const { topic, word } = useParams();
   const [isLoading, setIsLoading] = useState(true);
 
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -81,7 +82,7 @@ function Phrases() {
       <Navbar />
       <div className="phrase-container">
         <h1 onClick={() => navigate("/phrases")} className="directory-title">
-          Phrases
+          Words
         </h1>
         {currentPhrase ? (
           <div className="dircard">

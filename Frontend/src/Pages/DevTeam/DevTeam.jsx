@@ -3,7 +3,6 @@ import DevCard from "../../Components/DevCard/DevCard";
 import developers from "../../Services/devInfo.js";
 import Slider from "react-slick";
 import Navbar from "../../Components/Navbar/Navbar";
-import FooterSearch from "../../Components/FooterSearch/FooterSearch";
 
 function DevTeam() {
   const settings = {
@@ -68,10 +67,10 @@ function DevTeam() {
           src="src/assets/logos/touchstone-logo.png"
         />
         <h2 className="dev-team-header">About TouchStone</h2>
-        <main>
+        <div className="paragraph-about-app">
           <p className="dev-team-about-app">
             Welcome to TouchStone, where we're dedicated to making Braille
-            learning accessible and engaging for everyone. Inspired by the needs
+            learning accessible and engaging for everyone.Inspired by the needs
             of those experiencing vision loss and the curiosity of others eager
             to connect through Braille, our app features interactive quizzes and
             a simple, user-friendly interface designed for all learners. Whether
@@ -79,7 +78,7 @@ function DevTeam() {
             communicate more inclusively, Touch Stone is your companion in
             mastering Braille basics and building confidence in your abilities.
           </p>
-        </main>
+        </div>
         <h2 className="dev-team-header">Meet The Team</h2>
         <div className="developers-container">
           <Slider {...settings}>
@@ -100,7 +99,6 @@ function DevTeam() {
           </Slider>
         </div>
       </div>
-      <FooterSearch />
     </div>
   );
 }

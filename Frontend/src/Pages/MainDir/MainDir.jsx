@@ -66,7 +66,7 @@ function MainDir() {
           imgStyle={{ height: "80px", margin: "0px" }}
           dirTitle={{ fontSize: "20px", margin: "10px" }}
           title="Hello"
-          category="Common Phrases"
+          category="Common Words"
         />
       </div>
       <div onClick={() => navigate("/quiz")}>

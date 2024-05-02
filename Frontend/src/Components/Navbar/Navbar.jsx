@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <div onClick={() => navigate("/")}>
+      <div onClick={() => navigate("/home")}>
         <h3 className="navbar-title">TouchStone</h3>
       </div>
       <div className="burgermenu">
@@ -67,7 +67,7 @@ function Navbar() {
               location.pathname === "/phrases" ? "active-link" : ""
             }`}
           >
-            Phrases
+            Common Words
           </NavLink>
           <NavLink
             to="/quiz"

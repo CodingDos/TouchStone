@@ -11,12 +11,14 @@ import {
   getTimePhrases,
   getDirectionPhrases,
 } from "../../../Services/characters.js";
+import BackButton from "../../../Components/BackButton/BackButton.jsx"
 
 function PhrasesDir() {
   const { topic } = useParams();
   console.log("this is params for topic", topic);
   const navigate = useNavigate();
   const [phrases, setPhrases] = useState([]);
+  const [title, setTitle] = useState("")
 
   useEffect(() => {
     const getPhrases = async () => {
@@ -24,12 +26,15 @@ function PhrasesDir() {
       switch (topic) {
         case "Sgn":
           info = await getSignPhrases();
+          setTitle("Signs")
           break;
         case "Dir":
           info = await getDirectionPhrases();
+          setTitle("Directions")
           break;
         case "Tim":
           info = await getTimePhrases();
+          setTitle("Time")
           break;
         default:
           setPhrases([]);
@@ -43,9 +48,14 @@ function PhrasesDir() {
   return (
     <div className="phrasesdir">
       <Navbar />
-      <h1 className="directory-title" onClick={() => navigate(`/phrases/`)}>
-        Phrases
-      </h1>
+      <div className="root-back-button-phrasesdir">
+        <BackButton />
+        <div>
+        <h1 className="directory-title" onClick={() => navigate(`/phrases/`)}>
+        {title}
+        </h1>
+        </div>
+      </div>
       <div className="phrase-container">
         {phrases.map((phrase, idx) => (
           <div
