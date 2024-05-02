@@ -8,6 +8,12 @@
   padding-top: 100px;
   padding-bottom: 55px;
 }
+.root-back-button{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 8%;
+  position: absolute;
+}
 
 .phrase-container {
   height: 100%;
@@ -18,8 +24,12 @@
   gap: 1.5rem;
 }
 
-.directory-title {
+.directory-title { 
+  display: flex;
   margin: 0;
   font-size: 35px;
   color: #663d1f;
+  width: 100%;
+  justify-content: center;
+
 }

@@ -1,0 +1,15 @@
+
+.root-back-button{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 35px;
+    color: #663d1f;
+}
+
+.root-back-button svg{
+    margin: 0;
+    font-size: 35px;
+    color: #663d1f;
+}
+
