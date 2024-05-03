@@ -62,6 +62,14 @@ With an enhanced learning experience of instant translations of words and phrase
 
 # UX/UI & Getting Started
 
+## Initial Layout
+
+![TouchStone](Frontend/src/assets/wireframe/TouchStoneLayout.jpg "TouchStone Layout")
+
+## ERD
+
+![TouchStone](Frontend/src/assets/wireframe/TouchStoneERD.jpg "TouchStone ERD")
+
 ## Brand Color Pallete
 
 ![TouchStone](Frontend/src/assets/wireframe/TouchStoneColor.jpg "TouchStone Logo")
@@ -196,3 +204,7 @@ Future enhancements for TouchStone include refining our Gemini AI with tuned mod
 Additionally, we aim to introduce a camera feature that utilizes OCR technology powered by Google AI. This will allow users to take a picture of a text document and receive instant BRaille translations. We also plan to implement image detection technology so sers can photograph objects and receive their Braille descriptions.
 
 Our ongoing efforts will also focus on improving the accuracy of our Braille translations, ensuring TouchStone continues to meet the needs of our users effectively.
+
+# Video Walkthrough
+
+[Click here to watch the video walkthrough!](https://vimeo.com/942184572?share=copy)
