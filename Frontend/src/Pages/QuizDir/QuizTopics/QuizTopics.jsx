@@ -36,6 +36,14 @@ function QuizTopics() {
           >
             <Card title="Numbers" width={"140%"} height={"150px"} />
           </div>
+          <div
+            className="quiz-options"
+            onClick={() =>
+              navigate(`/quiz/${state.quiz}`, { state: { search: "!?." } })
+            }
+          >
+            <Card title="!?." width={"140%"} height={"150px"} />
+          </div>
         </div>
       </div>
       <FooterSearch />
