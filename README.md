@@ -1,4 +1,4 @@
-![TouchStone](src/assets/logos/TouchStoneLogo.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/logos/TouchStoneLogo.jpg "TouchStone Logo")
 
 # TouchStone
 
@@ -72,45 +72,45 @@ With an enhanced learning experience of instant translations of words and phrase
 
 ## Brand Color Pallete
 
-![TouchStone](src/assets/wireframe/TouchStoneColor.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/wireframe/TouchStoneColor.jpg "TouchStone Logo")
 
 ## Main Pages
 
-![TouchStone](src/assets/wireframe/TouchStonePages.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/wireframe/TouchStonePages.jpg "TouchStone Logo")
 
 ## Nav bar
 
-![TouchStone](src/assets/wireframe/TouchStoneNav.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/wireframe/TouchStoneNav.jpg "TouchStone Logo")
 
 ## Alphabet Directory & Cards
 
-![TouchStone](src/assets/wireframe/TouchStoneAlpha.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/wireframe/TouchStoneAlpha.jpg "TouchStone Logo")
 
 ## Phrases Directory & Cards
 
-![TouchStone](src/assets/wireframe/TouchStonePhrases.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/wireframe/TouchStonePhrases.jpg "TouchStone Logo")
 
 ## A.I Search Bar
 
-![TouchStone](src/assets/wireframe/TouchStoneSearch.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/wireframe/TouchStoneSearch.jpg "TouchStone Logo")
 
 ## Quizes
 
 ### Flashcards
 
-![TouchStone](src/assets/wireframe/TouchStoneAlphaFlash.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/wireframe/TouchStoneAlphaFlash.jpg "TouchStone Logo")
 
 ### Fillin Dots
 
-![TouchStone](src/assets/wireframe/TouchStoneFillin.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/wireframe/TouchStoneFillin.jpg "TouchStone Logo")
 
 ### Matching
 
-![TouchStone](src/assets/wireframe/TouchStoneMatching.jpg "TouchStone Logo")
+![TouchStone](Frontend/src/assets/wireframe/TouchStoneMatching.jpg "TouchStone Logo")
 
 Want to dive deeper? Click the PDF
 
-[Project Overview PDF](src/assets/wireframe/BRANDINGPRESENTATION.pdf)
+[Project Overview PDF](Frontend/src/assets/wireframe/BRANDINGPRESENTATION.pdf)
 
 # Development
 
