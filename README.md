@@ -66,7 +66,7 @@ With an enhanced learning experience of instant translations of words and phrase
 
 ![TouchStone](Frontend/src/assets/wireframe/TouchStoneLayout.jpg "TouchStone Layout")
 
-## ERD
+## Logic FlowChart 
 
 ![TouchStone](Frontend/src/assets/wireframe/TouchStoneERD.jpg "TouchStone ERD")
 
